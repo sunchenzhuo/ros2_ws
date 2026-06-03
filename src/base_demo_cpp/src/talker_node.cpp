@@ -3,7 +3,7 @@
  * @作者           : 树
  * @创建时间         : 2026-06-02 15:41:22
  * @最后编辑         : 树
- * @最后编辑时间       : 2026-06-03 11:00:47
+ * @最后编辑时间       : 2026-06-03 13:40:27
  * @Version      : V1.0.0
  * @功能描述         :ROS2 C++ 发布者示例节点。该节点创建一个名为 talker_node 的 ROS2 节点，并周期性向 chatter 话题发布 std_msgs::msg::String 字符串消息。
  * @Copyright    : Copyright (c) 2026 by 树, All Rights Reserved.
@@ -70,7 +70,7 @@ private:
             " vy=" + std::to_string(vy) +
             " wz=" + std::to_string(wz) +
             " battery_voltage=" + std::to_string(battery_voltage) +
-            " err" + err;
+            " err=" + err;
 
         // 通过发布者将消息发布到 chatter 话题。
         // 只要有订阅者订阅 chatter，就可以收到这条消息。
