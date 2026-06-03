@@ -3,7 +3,7 @@
  * @作者           : 树
  * @创建时间         : 2026-06-02 15:41:22
  * @最后编辑         : 树
- * @最后编辑时间       : 2026-06-02 16:15:56
+ * @最后编辑时间       : 2026-06-03 10:29:27
  * @Version      : V1.0.0
  * @功能描述         :ROS2 C++ 发布者示例节点。该节点创建一个名为 talker_node 的 ROS2 节点，并周期性向 chatter 话题发布 std_msgs::msg::String 字符串消息。
  * @Copyright    : Copyright (c) 2026 by 树, All Rights Reserved.
@@ -54,10 +54,23 @@ private:
         // std_msgs::msg::String 是 ROS2 内置的字符串消息类型。
         std_msgs::msg::String msg;
 
-        // 设置消息内容。
-        // count_ 是计数器，每发布一次递增一次。
-        // 例如 count_=0 时，消息内容为 hello ros20。
-        msg.data = "hello ros2 " + std::to_string(count_);
+        double vx = 0.30;
+        double vy = 0.00;
+        double wz = 0.50;
+        double battery_voltage = 12.30 - 0.01 * count_;
+        std::string err = "OK";
+        if (battery_voltage < 10.60)
+        {
+            err = "LOW_BATTERY_VOLTAGE";
+        }
+
+        msg.data =
+            "seq=" + std::to_string(count_) +
+            " vx=" + std::to_string(vx) +
+            " vy=" + std::to_string(vy) +
+            " wz=" + std::to_string(wz) +
+            " battery_voltage=" + std::to_string(battery_voltage) +
+            " err" + err;
 
         // 通过发布者将消息发布到 chatter 话题。
         // 只要有订阅者订阅 chatter，就可以收到这条消息。
@@ -65,7 +78,7 @@ private:
 
         // 打印日志，方便在终端看到当前发布的消息内容。
         // this->get_logger() 获取当前节点的日志器。
-        RCLCPP_INFO(this->get_logger(), "publish:%s", msg.data.c_str());
+        RCLCPP_INFO(this->get_logger(), "publish base status:%s", msg.data.c_str());
 
         count_++;
     }
@@ -97,7 +110,7 @@ public:
         // "chatter" 表示话题名称。
         // 10 表示 QoS 队列深度。
         // 如果发布太快、订阅者处理太慢，最多缓存 10 条消息。
-        publisher_ = this->create_publisher<std_msgs::msg::String>("chatter", 10);
+        publisher_ = this->create_publisher<std_msgs::msg::String>("/base/status", 10);
 
         // 创建一个墙上时间定时器。
         // 1s 表示每隔 1 秒触发一次。
