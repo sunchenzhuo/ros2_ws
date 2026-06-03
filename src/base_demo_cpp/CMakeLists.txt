@@ -24,13 +24,18 @@ ament_target_dependencies(listener_node
   std_msgs
 )
 
+add_executable(base_status_node src/base_status_node.cpp)
+ament_target_dependencies(base_status_node rclcpp std_msgs)
+
 # 安装可执行文件到 install/base_demo_cpp/lib/base_demo_cpp/
 # 这样 ros2 run base_demo_cpp talker_node / listener_node 才能找到
 install(TARGETS
   talker_node
   listener_node
+  base_status_node
   DESTINATION lib/${PROJECT_NAME}
 )
+
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

@@ -36,13 +36,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 34,
+				"line" : 32,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 0,
-				"line" : 40,
+				"line" : 47,
 				"parent" : 0
 			},
 			{
@@ -232,7 +232,7 @@
 				"talker_node"
 			],
 			"targetId" : "talker_node::@6890427a1f51a3e7e1df",
-			"targetIndex" : 2,
+			"targetIndex" : 3,
 			"type" : "target"
 		},
 		{
@@ -241,7 +241,7 @@
 			"cxxModuleBmiTarget" : 
 			{
 				"id" : "talker_node::@6890427a1f51a3e7e1df",
-				"index" : 2
+				"index" : 3
 			},
 			"destination" : "lib/base_demo_cpp",
 			"type" : "cxxModuleBmi"
@@ -255,7 +255,7 @@
 				"listener_node"
 			],
 			"targetId" : "listener_node::@6890427a1f51a3e7e1df",
-			"targetIndex" : 1,
+			"targetIndex" : 2,
 			"type" : "target"
 		},
 		{
@@ -264,6 +264,29 @@
 			"cxxModuleBmiTarget" : 
 			{
 				"id" : "listener_node::@6890427a1f51a3e7e1df",
+				"index" : 2
+			},
+			"destination" : "lib/base_demo_cpp",
+			"type" : "cxxModuleBmi"
+		},
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib/base_demo_cpp",
+			"paths" : 
+			[
+				"base_status_node"
+			],
+			"targetId" : "base_status_node::@6890427a1f51a3e7e1df",
+			"targetIndex" : 1,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"cxxModuleBmiTarget" : 
+			{
+				"id" : "base_status_node::@6890427a1f51a3e7e1df",
 				"index" : 1
 			},
 			"destination" : "lib/base_demo_cpp",

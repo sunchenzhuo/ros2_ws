@@ -3,7 +3,7 @@
  * @作者           : 树
  * @创建时间         : 2026-06-03 14:26:51
  * @最后编辑         : 树
- * @最后编辑时间       : 2026-06-03 17:07:00
+ * @最后编辑时间       : 2026-06-03 17:21:39
  * @Version      : V1.0.0
  * @功能描述         :ROS2 底盘状态模拟发布节点。该节点周期性生成底盘速度、电池电压和错误状态信息，并以字符串消息形式发布到 base_status 话题。
  * @Copyright    : Copyright (c) 2026 by 树, All Rights Reserved.
@@ -118,7 +118,7 @@ private:
 public:
     BaseStatusNode() : Node("base_status_node")
     {
-        publisher_ = this->create_publisher<std_msgs::msg::String>("base_status", 10);
+        publisher_ = this->create_publisher<std_msgs::msg::String>("/base/status", 10);
         timer_ = this->create_wall_timer(1s, std::bind(&BaseStatusNode::onTimer, this));
 
         RCLCPP_INFO(this->get_logger(), "base_status_node started");

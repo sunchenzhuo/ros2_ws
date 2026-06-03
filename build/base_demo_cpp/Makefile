@@ -223,6 +223,43 @@ listener_node/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/listener_node.dir/build.make CMakeFiles/listener_node.dir/build
 .PHONY : listener_node/fast
 
+#=============================================================================
+# Target rules for targets named base_status_node
+
+# Build rule for target.
+base_status_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 base_status_node
+.PHONY : base_status_node
+
+# fast build rule for target.
+base_status_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/base_status_node.dir/build.make CMakeFiles/base_status_node.dir/build
+.PHONY : base_status_node/fast
+
+src/base_status_node.o: src/base_status_node.cpp.o
+.PHONY : src/base_status_node.o
+
+# target to build an object file
+src/base_status_node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/base_status_node.dir/build.make CMakeFiles/base_status_node.dir/src/base_status_node.cpp.o
+.PHONY : src/base_status_node.cpp.o
+
+src/base_status_node.i: src/base_status_node.cpp.i
+.PHONY : src/base_status_node.i
+
+# target to preprocess a source file
+src/base_status_node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/base_status_node.dir/build.make CMakeFiles/base_status_node.dir/src/base_status_node.cpp.i
+.PHONY : src/base_status_node.cpp.i
+
+src/base_status_node.s: src/base_status_node.cpp.s
+.PHONY : src/base_status_node.s
+
+# target to generate assembly for a file
+src/base_status_node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/base_status_node.dir/build.make CMakeFiles/base_status_node.dir/src/base_status_node.cpp.s
+.PHONY : src/base_status_node.cpp.s
+
 src/listener_node.o: src/listener_node.cpp.o
 .PHONY : src/listener_node.o
 
@@ -286,8 +323,12 @@ help:
 	@echo "... test"
 	@echo "... base_demo_cpp_uninstall"
 	@echo "... uninstall"
+	@echo "... base_status_node"
 	@echo "... listener_node"
 	@echo "... talker_node"
+	@echo "... src/base_status_node.o"
+	@echo "... src/base_status_node.i"
+	@echo "... src/base_status_node.s"
 	@echo "... src/listener_node.o"
 	@echo "... src/listener_node.i"
 	@echo "... src/listener_node.s"
