@@ -3,7 +3,7 @@
  * @作者           : 树
  * @创建时间         : 2026-06-02 15:41:22
  * @最后编辑         : 树
- * @最后编辑时间       : 2026-06-03 10:29:27
+ * @最后编辑时间       : 2026-06-03 11:00:47
  * @Version      : V1.0.0
  * @功能描述         :ROS2 C++ 发布者示例节点。该节点创建一个名为 talker_node 的 ROS2 节点，并周期性向 chatter 话题发布 std_msgs::msg::String 字符串消息。
  * @Copyright    : Copyright (c) 2026 by 树, All Rights Reserved.
@@ -110,7 +110,7 @@ public:
         // "chatter" 表示话题名称。
         // 10 表示 QoS 队列深度。
         // 如果发布太快、订阅者处理太慢，最多缓存 10 条消息。
-        publisher_ = this->create_publisher<std_msgs::msg::String>("/base/status", 10);
+        publisher_ = this->create_publisher<std_msgs::msg::String>("/base/status_demo", 10);
 
         // 创建一个墙上时间定时器。
         // 1s 表示每隔 1 秒触发一次。
