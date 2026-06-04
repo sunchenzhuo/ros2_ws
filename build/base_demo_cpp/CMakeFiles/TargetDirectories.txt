@@ -3,6 +3,7 @@
 /home/shu/ros2_ws/build/base_demo_cpp/CMakeFiles/talker_node.dir
 /home/shu/ros2_ws/build/base_demo_cpp/CMakeFiles/listener_node.dir
 /home/shu/ros2_ws/build/base_demo_cpp/CMakeFiles/base_status_node.dir
+/home/shu/ros2_ws/build/base_demo_cpp/CMakeFiles/cmd_vel_listener_node.dir
 /home/shu/ros2_ws/build/base_demo_cpp/CMakeFiles/test.dir
 /home/shu/ros2_ws/build/base_demo_cpp/CMakeFiles/edit_cache.dir
 /home/shu/ros2_ws/build/base_demo_cpp/CMakeFiles/rebuild_cache.dir

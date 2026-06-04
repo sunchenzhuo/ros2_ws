@@ -9,6 +9,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
 
 # 编译 talker_node 发布者节点
 add_executable(talker_node src/talker_node.cpp)
@@ -27,18 +28,23 @@ ament_target_dependencies(listener_node
 add_executable(base_status_node src/base_status_node.cpp)
 ament_target_dependencies(base_status_node rclcpp std_msgs)
 
+add_executable(cmd_vel_listener_node src/cmd_vel_listener_node.cpp)
+ament_target_dependencies(cmd_vel_listener_node rclcpp geometry_msgs)
+
 # 安装可执行文件到 install/base_demo_cpp/lib/base_demo_cpp/
 # 这样 ros2 run base_demo_cpp talker_node / listener_node 才能找到
 install(TARGETS
   talker_node
   listener_node
   base_status_node
+  cmd_vel_listener_node
   DESTINATION lib/${PROJECT_NAME}
 )
 
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
+  find_package(geometry_msgs REQUIRED)
   set(ament_cmake_copyright_FOUND TRUE)
   set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()

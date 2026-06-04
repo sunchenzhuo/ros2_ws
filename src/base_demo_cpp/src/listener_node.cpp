@@ -3,7 +3,7 @@
  * @作者           : 树
  * @创建时间         : 2026-06-02 16:23:38
  * @最后编辑         : 树
- * @最后编辑时间       : 2026-06-03 10:39:23
+ * @最后编辑时间       : 2026-06-03 17:26:47
  * @Version      : V1.0.0
  * @功能描述         :ROS2 C++ 订阅者示例节点。该节点创建一个名为 listener_node 的 ROS2 节点，订阅 chatter 话题，并在收到 std_msgs::msg::String 字符串消息后输出接收日志。
  * @Copyright    : Copyright (c) 2026 by 树, All Rights Reserved.
@@ -44,7 +44,7 @@ public:
         // std::placeholders::_1 表示回调函数的第一个参数，
         // 也就是收到的消息对象 msg。
         subscription_ = this->create_subscription<std_msgs::msg::String>(
-            "/base/status_demo",
+            "/base/status",
             10,
             std::bind(&ListenerNode::onMessage, this, std::placeholders::_1));
 
