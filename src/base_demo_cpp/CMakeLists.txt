@@ -31,6 +31,9 @@ ament_target_dependencies(base_status_node rclcpp std_msgs)
 add_executable(cmd_vel_listener_node src/cmd_vel_listener_node.cpp)
 ament_target_dependencies(cmd_vel_listener_node rclcpp geometry_msgs)
 
+add_executable(base_node src/base_node.cpp)
+ament_target_dependencies(base_node rclcpp std_msgs geometry_msgs)
+
 # 安装可执行文件到 install/base_demo_cpp/lib/base_demo_cpp/
 # 这样 ros2 run base_demo_cpp talker_node / listener_node 才能找到
 install(TARGETS
@@ -38,6 +41,7 @@ install(TARGETS
   listener_node
   base_status_node
   cmd_vel_listener_node
+  base_node
   DESTINATION lib/${PROJECT_NAME}
 )
 

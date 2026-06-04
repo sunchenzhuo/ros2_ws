@@ -1,0 +1,115 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-8ef9b8241778aa96b739.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "base_demo_cpp",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "base_demo_cpp_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-base_demo_cpp_uninstall-e1ac004b07890996132b.json",
+					"name" : "base_demo_cpp_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "base_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-base_node-64cf085c665d1e1ceda2.json",
+					"name" : "base_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "base_status_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-base_status_node-dadcf6369c1f90f815a7.json",
+					"name" : "base_status_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cmd_vel_listener_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cmd_vel_listener_node-303f93d42c2327fe5f80.json",
+					"name" : "cmd_vel_listener_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "listener_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-listener_node-44ece8f9ef7b02aca6cf.json",
+					"name" : "listener_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "talker_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-talker_node-88bb73c96a90e445ce65.json",
+					"name" : "talker_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-5bb92514fbd94a4870d2.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/shu/ros2_ws/build/base_demo_cpp",
+		"source" : "/home/shu/ros2_ws/src/base_demo_cpp"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

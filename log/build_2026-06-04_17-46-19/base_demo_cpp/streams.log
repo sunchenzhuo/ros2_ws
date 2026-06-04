@@ -1,0 +1,33 @@
+[0.009s] Invoking command in '/home/shu/ros2_ws/build/base_demo_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/shu/ros2_ws/build/base_demo_cpp -- -j4 -l4
+[0.056s] [ 20%] Built target base_status_node
+[0.056s] [ 40%] Built target listener_node
+[0.058s] [ 60%] Built target cmd_vel_listener_node
+[0.062s] [ 80%] Built target talker_node
+[0.076s] [ 90%] [32mBuilding CXX object CMakeFiles/base_node.dir/src/base_node.cpp.o[0m
+[4.942s] [100%] [32m[1mLinking CXX executable base_node[0m
+[5.114s] [100%] Built target base_node
+[5.122s] Invoked command in '/home/shu/ros2_ws/build/base_demo_cpp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/shu/ros2_ws/build/base_demo_cpp -- -j4 -l4
+[5.128s] Invoking command in '/home/shu/ros2_ws/build/base_demo_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/shu/ros2_ws/build/base_demo_cpp
+[5.133s] -- Install configuration: ""
+[5.133s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/base_demo_cpp/talker_node
+[5.133s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/base_demo_cpp/listener_node
+[5.134s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/base_demo_cpp/base_status_node
+[5.134s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/base_demo_cpp/cmd_vel_listener_node
+[5.135s] -- Installing: /home/shu/ros2_ws/install/base_demo_cpp/lib/base_demo_cpp/base_node
+[5.138s] -- Set non-toolchain portion of runtime path of "/home/shu/ros2_ws/install/base_demo_cpp/lib/base_demo_cpp/base_node" to ""
+[5.138s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/ament_index/resource_index/package_run_dependencies/base_demo_cpp
+[5.138s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/ament_index/resource_index/parent_prefix_path/base_demo_cpp
+[5.138s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/environment/ament_prefix_path.sh
+[5.138s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/environment/ament_prefix_path.dsv
+[5.138s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/environment/path.sh
+[5.138s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/environment/path.dsv
+[5.138s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/local_setup.bash
+[5.138s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/local_setup.sh
+[5.138s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/local_setup.zsh
+[5.138s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/local_setup.dsv
+[5.139s] -- Installing: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/package.dsv
+[5.139s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/ament_index/resource_index/packages/base_demo_cpp
+[5.139s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/base_demo_cppConfig.cmake
+[5.139s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/base_demo_cppConfig-version.cmake
+[5.139s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/package.xml
+[5.140s] Invoked command in '/home/shu/ros2_ws/build/base_demo_cpp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/shu/ros2_ws/build/base_demo_cpp
