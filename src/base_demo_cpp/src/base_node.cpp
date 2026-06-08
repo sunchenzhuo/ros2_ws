@@ -3,23 +3,21 @@
  * @作者           : 树
  * @创建时间         : 2026-06-04 14:10:58
  * @最后编辑         : 树
- * @最后编辑时间       : 2026-06-05 17:19:36
+ * @最后编辑时间       : 2026-06-08 15:48:52
  * @Version      : V1.0.0
  * @功能描述         :ROS2 底盘模拟节点。该节点订阅 /cmd_vel 速度控制话题，接收底盘运动指令，并周期性发布 /base/status 底盘状态信息。
  * @Copyright    : Copyright (c) 2026 by 树, All Rights Reserved.
  */
 #include <chrono>     // 时间库，用于 1000ms 时间字面量
-#include <sstream>    // std::ostringstream，用于拼接状态字符串
-#include <iomanip>    // std::fixed、std::setprecision，用于格式化小数
 #include <string>     // std::string 字符串类型
 #include <memory>     // std::make_shared，用于创建智能指针
 #include <functional> // std::bind、std::placeholders
 #include <mutex>
 #include <vector>
 
-#include "rclcpp/rclcpp.hpp"           // ROS2 C++ 客户端库
-#include "geometry_msgs/msg/twist.hpp" // Twist 速度控制消息类型
-#include "std_msgs/msg/string.hpp"     // String 字符串消息类型
+#include "rclcpp/rclcpp.hpp"                 // ROS2 C++ 客户端库
+#include "geometry_msgs/msg/twist.hpp"       // Twist 速度控制消息类型
+#include "base_demo_cpp/msg/base_status.hpp" // String 字符串消息类型
 #include "rcl_interfaces/msg/set_parameters_result.hpp"
 
 // 启用 chrono 时间字面量。
@@ -50,7 +48,7 @@ private:
      *
      * 用于向 /base/status 话题发布 std_msgs::msg::String 类型状态消息。
      */
-    rclcpp::Publisher<std_msgs::msg::String>::SharedPtr status_pub_;
+    rclcpp::Publisher<base_demo_cpp::msg::BaseStatus>::SharedPtr status_pub_;
     /**
      * @brief 速度控制指令订阅者。
      *
@@ -256,23 +254,30 @@ private:
             err = "LOW_BATTERY";
         }
 
-        // 创建 ROS2 字符串消息。
-        std_msgs::msg::String msg;
+        // 创建结构化底盘状态消息。
+        base_demo_cpp::msg::BaseStatus msg;
 
-        // 拼接底盘状态字符串。
-        std::ostringstream oss;
-        oss << std::fixed << std::setprecision(2)
-            << " seq=" << seq_
-            << " vx=" << current_vx
-            << " vy=" << current_vy
-            << " wz=" << current_wz
-            << " battery_voltage=" << battery_voltage
-            << " err=" << err
-            << " cmd_timeout=" << (cmd_timeout ? 1 : 0);
-        msg.data = oss.str();
+        msg.seq = seq_;
+        msg.vx = current_vx;
+        msg.vy = current_vy;
+        msg.wz = current_wz;
+        msg.battery_voltage = battery_voltage;
+        msg.err = err;
+        msg.cmd_timeout = cmd_timeout;
+
         status_pub_->publish(msg);
 
-        RCLCPP_INFO(this->get_logger(), "publish /base/status: %s", msg.data.c_str());
+        RCLCPP_INFO(
+            this->get_logger(),
+            "publish /base/status: seq=%d vx=%.2f vy=%.2f wz=%.2f battery_voltage=%.2f err=%s cmd_timeout=%d",
+            msg.seq,
+            msg.vx,
+            msg.vy,
+            msg.wz,
+            msg.battery_voltage,
+            msg.err.c_str(),
+            msg.cmd_timeout ? 1 : 0);
+
         seq_++;
     }
 
@@ -410,7 +415,7 @@ public:
         timer_group_ = this->create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);
 
         // 创建底盘状态发布者。
-        status_pub_ = this->create_publisher<std_msgs::msg::String>("/base/status", 10);
+        status_pub_ = this->create_publisher<base_demo_cpp::msg::BaseStatus>("/base/status", 10);
 
         // 创建订阅选项，并指定 /cmd_vel 订阅者使用 cmd_group_ 回调组。
         rclcpp::SubscriptionOptions cmd_options;

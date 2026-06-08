@@ -1,0 +1,8 @@
+setup.py
+base_demo_cpp/__init__.py
+base_demo_cpp.egg-info/PKG-INFO
+base_demo_cpp.egg-info/SOURCES.txt
+base_demo_cpp.egg-info/dependency_links.txt
+base_demo_cpp.egg-info/top_level.txt
+base_demo_cpp/msg/__init__.py
+base_demo_cpp/msg/_base_status.py

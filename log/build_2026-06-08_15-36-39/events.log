@@ -1,0 +1,336 @@
+[0.000000] (-) TimerEvent: {}
+[0.000165] (base_demo_cpp) JobQueued: {'identifier': 'base_demo_cpp', 'dependencies': OrderedDict()}
+[0.000199] (base_demo_cpp) JobStarted: {'identifier': 'base_demo_cpp'}
+[0.009631] (base_demo_cpp) JobProgress: {'identifier': 'base_demo_cpp', 'progress': 'cmake'}
+[0.010726] (base_demo_cpp) JobProgress: {'identifier': 'base_demo_cpp', 'progress': 'build'}
+[0.011230] (base_demo_cpp) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/shu/ros2_ws/build/base_demo_cpp', '--', '-j4', '-l4'], 'cwd': '/home/shu/ros2_ws/build/base_demo_cpp', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'shu', 'SSH_CLIENT': '192.168.5.102 51543 22', 'XDG_SESSION_TYPE': 'tty', 'GIT_ASKPASS': '/home/shu/.vscode-server/cli/servers/Stable-6a44c352bd24569c417e530095901b649960f9f8/server/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'BROWSER': '/home/shu/.vscode-server/cli/servers/Stable-6a44c352bd24569c417e530095901b649960f9f8/server/bin/helpers/browser.sh', 'HOME': '/home/shu', 'OLDPWD': '/home/shu/ros2_ws/src/base_demo_cpp', 'TERM_PROGRAM_VERSION': '1.123.0', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-23cba8c1-99c3-4b81-979f-59eead1de9b5.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/shu/.vscode-server/cli/servers/Stable-6a44c352bd24569c417e530095901b649960f9f8/server/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/home/shu/.vscode-server/cli/servers/Stable-6a44c352bd24569c417e530095901b649960f9f8/server/node', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'shu', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '8', 'PATH': '/home/shu/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/shu/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/shu/.vscode-server/cli/servers/Stable-6a44c352bd24569c417e530095901b649960f9f8/server/bin/remote-cli:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'zh_CN.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-d38e53c47e.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/shu/ros2_ws/build/base_demo_cpp', 'COPILOT_DEBUG_NONCE': '30628f75d2cfdf8e30afb893bd72e239', 'SSH_CONNECTION': '192.168.5.102 51543 192.168.5.141 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.092009] (base_demo_cpp) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[0.099059] (-) TimerEvent: {}
+[0.200164] (-) TimerEvent: {}
+[0.301026] (-) TimerEvent: {}
+[0.364116] (base_demo_cpp) StdoutLine: {'line': b'-- Found rclcpp: 28.1.18 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[0.401260] (-) TimerEvent: {}
+[0.405448] (base_demo_cpp) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[0.415411] (base_demo_cpp) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[0.429645] (base_demo_cpp) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.446762] (base_demo_cpp) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.502268] (-) TimerEvent: {}
+[0.519852] (base_demo_cpp) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[0.522698] (base_demo_cpp) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.584587] (base_demo_cpp) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.602526] (-) TimerEvent: {}
+[0.648835] (base_demo_cpp) StdoutLine: {'line': b'-- Found std_msgs: 5.3.7 (/opt/ros/jazzy/share/std_msgs/cmake)\n'}
+[0.664199] (base_demo_cpp) StdoutLine: {'line': b'-- Found geometry_msgs: 5.3.7 (/opt/ros/jazzy/share/geometry_msgs/cmake)\n'}
+[0.680961] (base_demo_cpp) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)\n'}
+[0.698421] (base_demo_cpp) StdoutLine: {'line': b'-- Found rosidl_adapter: 4.6.7 (/opt/ros/jazzy/share/rosidl_adapter/cmake)\n'}
+[0.702824] (-) TimerEvent: {}
+[0.803204] (-) TimerEvent: {}
+[0.903539] (-) TimerEvent: {}
+[1.003980] (-) TimerEvent: {}
+[1.103601] (base_demo_cpp) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)\n'}
+[1.104753] (-) TimerEvent: {}
+[1.205316] (-) TimerEvent: {}
+[1.306633] (-) TimerEvent: {}
+[1.407024] (-) TimerEvent: {}
+[1.508953] (-) TimerEvent: {}
+[1.609706] (-) TimerEvent: {}
+[1.616986] (base_demo_cpp) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.710994] (-) TimerEvent: {}
+[1.811787] (-) TimerEvent: {}
+[1.826433] (base_demo_cpp) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.829815] (base_demo_cpp) StdoutLine: {'line': b'-- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)\n'}
+[1.912083] (-) TimerEvent: {}
+[1.926025] (base_demo_cpp) StdoutLine: {'line': b'-- Found PythonExtra: /usr/bin/python3  \n'}
+[2.012407] (-) TimerEvent: {}
+[2.113221] (-) TimerEvent: {}
+[2.213537] (-) TimerEvent: {}
+[2.310040] (base_demo_cpp) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed \n'}
+[2.314332] (-) TimerEvent: {}
+[2.359714] (base_demo_cpp) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[2.363125] (base_demo_cpp) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.17.5 (/opt/ros/jazzy/share/ament_lint_auto/cmake)\n'}
+[2.386708] (base_demo_cpp) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[2.387056] (base_demo_cpp) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[2.387147] (base_demo_cpp) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[2.388055] (base_demo_cpp) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[2.389184] (base_demo_cpp) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[2.389266] (base_demo_cpp) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[2.389664] (base_demo_cpp) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[2.392833] (base_demo_cpp) StdoutLine: {'line': b'-- Configuring done (2.3s)\n'}
+[2.414833] (-) TimerEvent: {}
+[2.442715] (base_demo_cpp) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[2.456870] (base_demo_cpp) StdoutLine: {'line': b'-- Build files have been written to: /home/shu/ros2_ws/build/base_demo_cpp\n'}
+[2.485167] (base_demo_cpp) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating type hashes for ROS interfaces\x1b[0m\n'}
+[2.485313] (base_demo_cpp) StdoutLine: {'line': b'[  4%] \x1b[34m\x1b[1mGenerating Rust code for ROS interfaces\x1b[0m\n'}
+[2.492505] (base_demo_cpp) StdoutLine: {'line': b'[  6%] \x1b[32mBuilding CXX object CMakeFiles/talker_node.dir/src/talker_node.cpp.o\x1b[0m\n'}
+[2.496906] (base_demo_cpp) StdoutLine: {'line': b'[  8%] \x1b[32mBuilding CXX object CMakeFiles/listener_node.dir/src/listener_node.cpp.o\x1b[0m\n'}
+[2.515982] (-) TimerEvent: {}
+[2.616820] (-) TimerEvent: {}
+[2.630666] (base_demo_cpp) StdoutLine: {'line': b'[  8%] Built target base_demo_cpp__rosidl_generator_type_description\n'}
+[2.648861] (base_demo_cpp) StdoutLine: {'line': b'[  8%] Built target ament_cmake_python_copy_base_demo_cpp\n'}
+[2.665359] (base_demo_cpp) StdoutLine: {'line': b'[  8%] Built target base_demo_cpp__rs\n'}
+[2.666869] (base_demo_cpp) StdoutLine: {'line': b'[ 11%] \x1b[32mBuilding CXX object CMakeFiles/base_status_node.dir/src/base_status_node.cpp.o\x1b[0m\n'}
+[2.686720] (base_demo_cpp) StdoutLine: {'line': b'[ 13%] \x1b[32mBuilding CXX object CMakeFiles/cmd_vel_listener_node.dir/src/cmd_vel_listener_node.cpp.o\x1b[0m\n'}
+[2.718735] (-) TimerEvent: {}
+[2.819817] (-) TimerEvent: {}
+[2.920426] (-) TimerEvent: {}
+[3.020774] (-) TimerEvent: {}
+[3.121252] (-) TimerEvent: {}
+[3.221853] (-) TimerEvent: {}
+[3.322409] (-) TimerEvent: {}
+[3.422944] (-) TimerEvent: {}
+[3.523791] (-) TimerEvent: {}
+[3.626541] (-) TimerEvent: {}
+[3.727458] (-) TimerEvent: {}
+[3.829655] (-) TimerEvent: {}
+[3.930335] (-) TimerEvent: {}
+[4.048237] (-) TimerEvent: {}
+[4.149657] (-) TimerEvent: {}
+[4.250200] (-) TimerEvent: {}
+[4.350678] (-) TimerEvent: {}
+[4.451377] (-) TimerEvent: {}
+[4.554320] (-) TimerEvent: {}
+[4.654804] (-) TimerEvent: {}
+[4.755570] (-) TimerEvent: {}
+[4.861166] (-) TimerEvent: {}
+[4.967280] (-) TimerEvent: {}
+[5.084063] (-) TimerEvent: {}
+[5.184412] (-) TimerEvent: {}
+[5.286270] (-) TimerEvent: {}
+[5.389278] (-) TimerEvent: {}
+[5.489836] (-) TimerEvent: {}
+[5.590095] (-) TimerEvent: {}
+[5.691771] (-) TimerEvent: {}
+[5.796525] (-) TimerEvent: {}
+[5.897188] (-) TimerEvent: {}
+[5.998249] (-) TimerEvent: {}
+[6.099567] (-) TimerEvent: {}
+[6.203242] (-) TimerEvent: {}
+[6.303753] (-) TimerEvent: {}
+[6.404282] (-) TimerEvent: {}
+[6.505474] (-) TimerEvent: {}
+[6.605829] (-) TimerEvent: {}
+[6.706275] (-) TimerEvent: {}
+[6.811559] (-) TimerEvent: {}
+[6.912243] (-) TimerEvent: {}
+[7.014239] (-) TimerEvent: {}
+[7.115025] (-) TimerEvent: {}
+[7.215592] (-) TimerEvent: {}
+[7.316710] (-) TimerEvent: {}
+[7.420642] (-) TimerEvent: {}
+[7.520950] (-) TimerEvent: {}
+[7.621200] (-) TimerEvent: {}
+[7.722364] (-) TimerEvent: {}
+[7.825586] (-) TimerEvent: {}
+[7.929476] (-) TimerEvent: {}
+[7.939917] (base_demo_cpp) StdoutLine: {'line': b'[ 15%] \x1b[32m\x1b[1mLinking CXX executable base_status_node\x1b[0m\n'}
+[8.030778] (-) TimerEvent: {}
+[8.109871] (base_demo_cpp) StdoutLine: {'line': b'[ 17%] \x1b[32m\x1b[1mLinking CXX executable talker_node\x1b[0m\n'}
+[8.131477] (-) TimerEvent: {}
+[8.225557] (base_demo_cpp) StdoutLine: {'line': b'[ 17%] Built target base_status_node\n'}
+[8.232160] (-) TimerEvent: {}
+[8.249286] (base_demo_cpp) StdoutLine: {'line': b'[ 20%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[8.259254] (base_demo_cpp) StdoutLine: {'line': b'[ 20%] Built target talker_node\n'}
+[8.279990] (base_demo_cpp) StdoutLine: {'line': b'[ 22%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[8.334332] (-) TimerEvent: {}
+[8.434696] (-) TimerEvent: {}
+[8.498323] (base_demo_cpp) StdoutLine: {'line': b'[ 24%] \x1b[32mBuilding C object CMakeFiles/base_demo_cpp__rosidl_generator_c.dir/rosidl_generator_c/base_demo_cpp/msg/detail/base_status__description.c.o\x1b[0m\n'}
+[8.518484] (base_demo_cpp) StdoutLine: {'line': b'[ 24%] Built target base_demo_cpp__cpp\n'}
+[8.535232] (-) TimerEvent: {}
+[8.558252] (base_demo_cpp) StdoutLine: {'line': b'[ 26%] \x1b[32mBuilding C object CMakeFiles/base_demo_cpp__rosidl_generator_c.dir/rosidl_generator_c/base_demo_cpp/msg/detail/base_status__functions.c.o\x1b[0m\n'}
+[8.590452] (base_demo_cpp) StdoutLine: {'line': b'[ 28%] \x1b[32mBuilding C object CMakeFiles/base_demo_cpp__rosidl_generator_c.dir/rosidl_generator_c/base_demo_cpp/msg/detail/base_status__type_support.c.o\x1b[0m\n'}
+[8.610218] (base_demo_cpp) StdoutLine: {'line': b'[ 31%] \x1b[32m\x1b[1mLinking C shared library libbase_demo_cpp__rosidl_generator_c.so\x1b[0m\n'}
+[8.636808] (-) TimerEvent: {}
+[8.638935] (base_demo_cpp) StdoutLine: {'line': b'[ 31%] Built target base_demo_cpp__rosidl_generator_c\n'}
+[8.650522] (base_demo_cpp) StdoutLine: {'line': b'[ 33%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[8.737309] (-) TimerEvent: {}
+[8.740199] (base_demo_cpp) StdoutLine: {'line': b'running egg_info\n'}
+[8.740833] (base_demo_cpp) StdoutLine: {'line': b'creating base_demo_cpp.egg-info\n'}
+[8.751880] (base_demo_cpp) StdoutLine: {'line': b'writing base_demo_cpp.egg-info/PKG-INFO\n'}
+[8.754202] (base_demo_cpp) StdoutLine: {'line': b'writing dependency_links to base_demo_cpp.egg-info/dependency_links.txt\n'}
+[8.754310] (base_demo_cpp) StdoutLine: {'line': b'writing top-level names to base_demo_cpp.egg-info/top_level.txt\n'}
+[8.754346] (base_demo_cpp) StdoutLine: {'line': b"writing manifest file 'base_demo_cpp.egg-info/SOURCES.txt'\n"}
+[8.785586] (base_demo_cpp) StdoutLine: {'line': b"reading manifest file 'base_demo_cpp.egg-info/SOURCES.txt'\n"}
+[8.785930] (base_demo_cpp) StdoutLine: {'line': b"writing manifest file 'base_demo_cpp.egg-info/SOURCES.txt'\n"}
+[8.807911] (base_demo_cpp) StdoutLine: {'line': b'[ 33%] Built target ament_cmake_python_build_base_demo_cpp_egg\n'}
+[8.815990] (base_demo_cpp) StdoutLine: {'line': b'[ 35%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[8.837460] (-) TimerEvent: {}
+[8.845300] (base_demo_cpp) StdoutLine: {'line': b'[ 37%] \x1b[32mBuilding CXX object CMakeFiles/base_demo_cpp__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/base_demo_cpp/msg/detail/base_status__type_support_c.cpp.o\x1b[0m\n'}
+[8.937520] (-) TimerEvent: {}
+[8.986081] (base_demo_cpp) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object CMakeFiles/base_demo_cpp__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/base_demo_cpp/msg/detail/dds_fastrtps/base_status__type_support.cpp.o\x1b[0m\n'}
+[9.038084] (-) TimerEvent: {}
+[9.138356] (-) TimerEvent: {}
+[9.169786] (base_demo_cpp) StdoutLine: {'line': b'[ 42%] \x1b[32m\x1b[1mLinking CXX shared library libbase_demo_cpp__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[9.219260] (base_demo_cpp) StdoutLine: {'line': b'[ 42%] Built target base_demo_cpp__rosidl_typesupport_fastrtps_c\n'}
+[9.224878] (base_demo_cpp) StdoutLine: {'line': b'[ 44%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[9.238708] (-) TimerEvent: {}
+[9.281327] (base_demo_cpp) StdoutLine: {'line': b'[ 46%] \x1b[32m\x1b[1mLinking CXX shared library libbase_demo_cpp__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[9.330419] (base_demo_cpp) StdoutLine: {'line': b'[ 46%] Built target base_demo_cpp__rosidl_typesupport_fastrtps_cpp\n'}
+[9.338819] (-) TimerEvent: {}
+[9.339046] (base_demo_cpp) StdoutLine: {'line': b'[ 48%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[9.431701] (base_demo_cpp) StdoutLine: {'line': b'[ 51%] \x1b[32mBuilding C object CMakeFiles/base_demo_cpp__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/base_demo_cpp/msg/detail/base_status__type_support.c.o\x1b[0m\n'}
+[9.438893] (-) TimerEvent: {}
+[9.464708] (base_demo_cpp) StdoutLine: {'line': b'[ 53%] \x1b[32m\x1b[1mLinking C shared library libbase_demo_cpp__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[9.496441] (base_demo_cpp) StdoutLine: {'line': b'[ 53%] Built target base_demo_cpp__rosidl_typesupport_introspection_c\n'}
+[9.504205] (base_demo_cpp) StdoutLine: {'line': b'[ 55%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[9.513763] (base_demo_cpp) StdoutLine: {'line': b'[ 57%] \x1b[32mBuilding CXX object CMakeFiles/base_demo_cpp__rosidl_typesupport_c.dir/rosidl_typesupport_c/base_demo_cpp/msg/base_status__type_support.cpp.o\x1b[0m\n'}
+[9.540499] (-) TimerEvent: {}
+[9.542808] (base_demo_cpp) StdoutLine: {'line': b'[ 60%] \x1b[32m\x1b[1mLinking CXX shared library libbase_demo_cpp__rosidl_typesupport_c.so\x1b[0m\n'}
+[9.582512] (base_demo_cpp) StdoutLine: {'line': b'[ 60%] Built target base_demo_cpp__rosidl_typesupport_c\n'}
+[9.590350] (base_demo_cpp) StdoutLine: {'line': b'[ 62%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[9.641445] (-) TimerEvent: {}
+[9.689261] (base_demo_cpp) StdoutLine: {'line': b'[ 64%] \x1b[32mBuilding CXX object CMakeFiles/base_demo_cpp__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/base_demo_cpp/msg/detail/base_status__type_support.cpp.o\x1b[0m\n'}
+[9.742037] (-) TimerEvent: {}
+[9.745204] (base_demo_cpp) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/base_demo_cpp__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/base_demo_cpp/msg/base_status__type_support.cpp.o\x1b[0m\n'}
+[9.842302] (-) TimerEvent: {}
+[9.912839] (base_demo_cpp) StdoutLine: {'line': b'[ 68%] \x1b[32m\x1b[1mLinking CXX shared library libbase_demo_cpp__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[9.942496] (-) TimerEvent: {}
+[9.946466] (base_demo_cpp) StdoutLine: {'line': b'[ 71%] \x1b[32m\x1b[1mLinking CXX shared library libbase_demo_cpp__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[9.970370] (base_demo_cpp) StdoutLine: {'line': b'[ 71%] Built target base_demo_cpp__rosidl_typesupport_introspection_cpp\n'}
+[9.979532] (base_demo_cpp) StdoutLine: {'line': b'[ 71%] Built target base_demo_cpp__rosidl_typesupport_cpp\n'}
+[9.992519] (base_demo_cpp) StdoutLine: {'line': b'[ 71%] Built target base_demo_cpp\n'}
+[10.000745] (base_demo_cpp) StdoutLine: {'line': b'[ 73%] \x1b[32mBuilding CXX object CMakeFiles/base_node.dir/src/base_node.cpp.o\x1b[0m\n'}
+[10.007616] (base_demo_cpp) StdoutLine: {'line': b'[ 75%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[10.042834] (-) TimerEvent: {}
+[10.144969] (-) TimerEvent: {}
+[10.225007] (base_demo_cpp) StdoutLine: {'line': b'[ 75%] Built target base_demo_cpp__py\n'}
+[10.239907] (base_demo_cpp) StdoutLine: {'line': b'[ 77%] \x1b[32mBuilding C object CMakeFiles/base_demo_cpp__rosidl_generator_py.dir/rosidl_generator_py/base_demo_cpp/msg/_base_status_s.c.o\x1b[0m\n'}
+[10.246011] (-) TimerEvent: {}
+[10.347273] (-) TimerEvent: {}
+[10.373446] (base_demo_cpp) StdoutLine: {'line': b'[ 80%] \x1b[32m\x1b[1mLinking C shared library libbase_demo_cpp__rosidl_generator_py.so\x1b[0m\n'}
+[10.406971] (base_demo_cpp) StdoutLine: {'line': b'[ 80%] Built target base_demo_cpp__rosidl_generator_py\n'}
+[10.420395] (base_demo_cpp) StdoutLine: {'line': b'[ 82%] \x1b[32mBuilding C object CMakeFiles/base_demo_cpp_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/base_demo_cpp/_base_demo_cpp_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[10.447631] (-) TimerEvent: {}
+[10.487676] (base_demo_cpp) StdoutLine: {'line': b'[ 84%] \x1b[32m\x1b[1mLinking C shared module rosidl_generator_py/base_demo_cpp/base_demo_cpp_s__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[10.510624] (base_demo_cpp) StdoutLine: {'line': b'[ 84%] Built target base_demo_cpp_s__rosidl_typesupport_fastrtps_c\n'}
+[10.530718] (base_demo_cpp) StdoutLine: {'line': b'[ 86%] \x1b[32mBuilding C object CMakeFiles/base_demo_cpp_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/base_demo_cpp/_base_demo_cpp_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[10.537278] (base_demo_cpp) StdoutLine: {'line': b'[ 88%] \x1b[32m\x1b[1mLinking CXX executable listener_node\x1b[0m\n'}
+[10.548299] (base_demo_cpp) StdoutLine: {'line': b'[ 91%] \x1b[32m\x1b[1mLinking CXX executable cmd_vel_listener_node\x1b[0m\n'}
+[10.548445] (-) TimerEvent: {}
+[10.603582] (base_demo_cpp) StdoutLine: {'line': b'[ 93%] \x1b[32m\x1b[1mLinking C shared module rosidl_generator_py/base_demo_cpp/base_demo_cpp_s__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[10.625290] (base_demo_cpp) StdoutLine: {'line': b'[ 93%] Built target base_demo_cpp_s__rosidl_typesupport_introspection_c\n'}
+[10.641225] (base_demo_cpp) StdoutLine: {'line': b'[ 95%] \x1b[32mBuilding C object CMakeFiles/base_demo_cpp_s__rosidl_typesupport_c.dir/rosidl_generator_py/base_demo_cpp/_base_demo_cpp_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[10.650666] (-) TimerEvent: {}
+[10.723616] (base_demo_cpp) StdoutLine: {'line': b'[ 97%] \x1b[32m\x1b[1mLinking C shared module rosidl_generator_py/base_demo_cpp/base_demo_cpp_s__rosidl_typesupport_c.so\x1b[0m\n'}
+[10.747775] (base_demo_cpp) StdoutLine: {'line': b'[ 97%] Built target listener_node\n'}
+[10.750775] (-) TimerEvent: {}
+[10.751296] (base_demo_cpp) StdoutLine: {'line': b'[ 97%] Built target base_demo_cpp_s__rosidl_typesupport_c\n'}
+[10.755838] (base_demo_cpp) StdoutLine: {'line': b'[ 97%] Built target cmd_vel_listener_node\n'}
+[10.850944] (-) TimerEvent: {}
+[10.951349] (-) TimerEvent: {}
+[11.051812] (-) TimerEvent: {}
+[11.152591] (-) TimerEvent: {}
+[11.253153] (-) TimerEvent: {}
+[11.353563] (-) TimerEvent: {}
+[11.454311] (-) TimerEvent: {}
+[11.555230] (-) TimerEvent: {}
+[11.601235] (base_demo_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shu/ros2_ws/src/base_demo_cpp/src/base_node.cpp:53:23:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_msgs\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[11.601442] (base_demo_cpp) StderrLine: {'line': b'   53 |     rclcpp::Publisher<\x1b[01;31m\x1b[Kstd_msgs\x1b[m\x1b[K::msg::String>::SharedPtr status_pub_;\n'}
+[11.601483] (base_demo_cpp) StderrLine: {'line': b'      |                       \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[11.601519] (base_demo_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shu/ros2_ws/src/base_demo_cpp/src/base_node.cpp:53:44:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[11.601580] (base_demo_cpp) StderrLine: {'line': b'   53 |     rclcpp::Publisher<std_msgs::msg::String\x1b[01;31m\x1b[K>\x1b[m\x1b[K::SharedPtr status_pub_;\n'}
+[11.601612] (base_demo_cpp) StderrLine: {'line': b'      |                                            \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[11.601832] (base_demo_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shu/ros2_ws/src/base_demo_cpp/src/base_node.cpp:53:47:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 at end of member declaration\n'}
+[11.601885] (base_demo_cpp) StderrLine: {'line': b'   53 |     rclcpp::Publisher<std_msgs::msg::String>::\x1b[01;31m\x1b[KSharedPtr\x1b[m\x1b[K status_pub_;\n'}
+[11.601916] (base_demo_cpp) StderrLine: {'line': b'      |                                               \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[11.601947] (base_demo_cpp) StderrLine: {'line': b'      |                                                        \x1b[32m\x1b[K;\x1b[m\x1b[K\n'}
+[11.603336] (base_demo_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shu/ros2_ws/src/base_demo_cpp/src/base_node.cpp:53:57:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstatus_pub_\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[11.603428] (base_demo_cpp) StderrLine: {'line': b'   53 |     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr \x1b[01;31m\x1b[Kstatus_pub_\x1b[m\x1b[K;\n'}
+[11.603466] (base_demo_cpp) StderrLine: {'line': b'      |                                                         \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[11.621944] (base_demo_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shu/ros2_ws/src/base_demo_cpp/src/base_node.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid BaseNode::\x1b[01;32m\x1b[KonTimer\x1b[m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[11.622088] (base_demo_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shu/ros2_ws/src/base_demo_cpp/src/base_node.cpp:260:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_msgs\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[11.622123] (base_demo_cpp) StderrLine: {'line': b'  260 |         \x1b[01;31m\x1b[Kstd_msgs\x1b[m\x1b[K::msg::String msg;\n'}
+[11.622160] (base_demo_cpp) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[11.623499] (base_demo_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shu/ros2_ws/src/base_demo_cpp/src/base_node.cpp:272:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmsg\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[11.623576] (base_demo_cpp) StderrLine: {'line': b'  272 |         \x1b[01;31m\x1b[Kmsg\x1b[m\x1b[K.data = oss.str();\n'}
+[11.623609] (base_demo_cpp) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[11.623963] (base_demo_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shu/ros2_ws/src/base_demo_cpp/src/base_node.cpp:272:9:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Ksuggested alternatives:\n'}
+[11.624037] (base_demo_cpp) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__struct.hpp:157\x1b[m\x1b[K,\n'}
+[11.624253] (base_demo_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/srv/list_parameters.hpp:7\x1b[m\x1b[K,\n'}
+[11.625319] (base_demo_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:21\x1b[m\x1b[K,\n'}
+[11.625371] (base_demo_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171\x1b[m\x1b[K,\n'}
+[11.625404] (base_demo_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/shu/ros2_ws/src/base_demo_cpp/src/base_node.cpp:20\x1b[m\x1b[K:\n'}
+[11.625434] (base_demo_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__struct.hpp:31:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Krcl_interfaces::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[11.625466] (base_demo_cpp) StderrLine: {'line': b'   31 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[11.625493] (base_demo_cpp) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[11.625520] (base_demo_cpp) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/jazzy/include/service_msgs/service_msgs/msg/detail/service_event_info__struct.hpp:24\x1b[m\x1b[K,\n'}
+[11.625548] (base_demo_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__struct.hpp:268\x1b[m\x1b[K:\n'}
+[11.625582] (base_demo_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.hpp:31:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kbuiltin_interfaces::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[11.625613] (base_demo_cpp) StderrLine: {'line': b'   31 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[11.625642] (base_demo_cpp) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[11.625670] (base_demo_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/service_msgs/service_msgs/msg/detail/service_event_info__struct.hpp:35:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kservice_msgs::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[11.625705] (base_demo_cpp) StderrLine: {'line': b'   35 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[11.625733] (base_demo_cpp) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[11.625907] (base_demo_cpp) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/jazzy/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__struct.hpp:27\x1b[m\x1b[K,\n'}
+[11.626005] (base_demo_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/statistics_msgs/statistics_msgs/msg/metrics_message.hpp:7\x1b[m\x1b[K,\n'}
+[11.626041] (base_demo_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/libstatistics_collector/libstatistics_collector/collector/generate_statistics_message.hpp:21\x1b[m\x1b[K,\n'}
+[11.626084] (base_demo_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:23\x1b[m\x1b[K,\n'}
+[11.626113] (base_demo_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/subscription.hpp:50\x1b[m\x1b[K,\n'}
+[11.626140] (base_demo_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/any_executable.hpp:25\x1b[m\x1b[K,\n'}
+[11.626167] (base_demo_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[11.626195] (base_demo_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[11.626221] (base_demo_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/executor_options.hpp:22\x1b[m\x1b[K,\n'}
+[11.626442] (base_demo_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/executor.hpp:38\x1b[m\x1b[K,\n'}
+[11.626485] (base_demo_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[11.626516] (base_demo_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[11.626634] (base_demo_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:172\x1b[m\x1b[K:\n'}
+[11.626677] (base_demo_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/statistics_msgs/statistics_msgs/msg/detail/statistic_data_point__struct.hpp:31:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kstatistics_msgs::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[11.626709] (base_demo_cpp) StderrLine: {'line': b'   31 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[11.626739] (base_demo_cpp) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[11.626768] (base_demo_cpp) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/twist__struct.hpp:25\x1b[m\x1b[K,\n'}
+[11.626802] (base_demo_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/twist.hpp:7\x1b[m\x1b[K,\n'}
+[11.626830] (base_demo_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/shu/ros2_ws/src/base_demo_cpp/src/base_node.cpp:21\x1b[m\x1b[K:\n'}
+[11.626857] (base_demo_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/geometry_msgs/geometry_msgs/msg/detail/vector3__struct.hpp:31:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kgeometry_msgs::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[11.626886] (base_demo_cpp) StderrLine: {'line': b'   31 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[11.626913] (base_demo_cpp) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[11.626942] (base_demo_cpp) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/shu/ros2_ws/build/base_demo_cpp/rosidl_generator_cpp/base_demo_cpp/msg/base_status.hpp:7\x1b[m\x1b[K,\n'}
+[11.626969] (base_demo_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/shu/ros2_ws/src/base_demo_cpp/src/base_node.cpp:22\x1b[m\x1b[K:\n'}
+[11.626995] (base_demo_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shu/ros2_ws/build/base_demo_cpp/rosidl_generator_cpp/base_demo_cpp/msg/detail/base_status__struct.hpp:31:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kbase_demo_cpp::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[11.627023] (base_demo_cpp) StderrLine: {'line': b'   31 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[11.627049] (base_demo_cpp) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[11.630438] (base_demo_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shu/ros2_ws/src/base_demo_cpp/src/base_node.cpp:273:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstatus_pub_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[11.630513] (base_demo_cpp) StderrLine: {'line': b'  273 |         \x1b[01;31m\x1b[Kstatus_pub_\x1b[m\x1b[K->publish(msg);\n'}
+[11.630545] (base_demo_cpp) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[11.644959] (base_demo_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shu/ros2_ws/src/base_demo_cpp/src/base_node.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KBaseNode::\x1b[01;32m\x1b[KBaseNode\x1b[m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[11.645097] (base_demo_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shu/ros2_ws/src/base_demo_cpp/src/base_node.cpp:413:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstatus_pub_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[11.645147] (base_demo_cpp) StderrLine: {'line': b'  413 |         \x1b[01;31m\x1b[Kstatus_pub_\x1b[m\x1b[K = this->create_publisher<std_msgs::msg::String>("/base/status", 10);\n'}
+[11.645184] (base_demo_cpp) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[11.649173] (base_demo_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shu/ros2_ws/src/base_demo_cpp/src/base_node.cpp:413:46:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kstd_msgs\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[11.649268] (base_demo_cpp) StderrLine: {'line': b'  413 |         status_pub_ = this->create_publisher<\x1b[01;31m\x1b[Kstd_msgs\x1b[m\x1b[K::msg::String>("/base/status", 10);\n'}
+[11.649301] (base_demo_cpp) StderrLine: {'line': b'      |                                              \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[11.649331] (base_demo_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shu/ros2_ws/src/base_demo_cpp/src/base_node.cpp:413:29:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kparse error in template argument list\n'}
+[11.649362] (base_demo_cpp) StderrLine: {'line': b'  413 |         status_pub_ = this->\x1b[01;31m\x1b[Kcreate_publisher<std_msgs::msg::String>\x1b[m\x1b[K("/base/status", 10);\n'}
+[11.649403] (base_demo_cpp) StderrLine: {'line': b'      |                             \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[11.649431] (base_demo_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shu/ros2_ws/src/base_demo_cpp/src/base_node.cpp:413:68:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[KBaseNode::create_publisher<<expression error> >(const char [13], int)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[11.649458] (base_demo_cpp) StderrLine: {'line': b'  413 |         status_pub_ = \x1b[01;31m\x1b[Kthis->create_publisher<std_msgs::msg::String>("/base/status", 10)\x1b[m\x1b[K;\n'}
+[11.649485] (base_demo_cpp) StderrLine: {'line': b'      |                       \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[11.649509] (base_demo_cpp) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28\x1b[m\x1b[K,\n'}
+[11.649535] (base_demo_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:22\x1b[m\x1b[K:\n'}
+[11.649560] (base_demo_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::\x1b[01;32m\x1b[Kcreate_publisher\x1b[m\x1b[K(const std::string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[11.649588] (base_demo_cpp) StderrLine: {'line': b'  197 |   \x1b[01;36m\x1b[Kcreate_publisher\x1b[m\x1b[K(\n'}
+[11.649615] (base_demo_cpp) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[11.649640] (base_demo_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:197:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[11.649666] (base_demo_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shu/ros2_ws/src/base_demo_cpp/src/base_node.cpp:413:68:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[11.649692] (base_demo_cpp) StderrLine: {'line': b'  413 |         status_pub_ = \x1b[01;31m\x1b[Kthis->create_publisher<std_msgs::msg::String>("/base/status", 10)\x1b[m\x1b[K;\n'}
+[11.649717] (base_demo_cpp) StderrLine: {'line': b'      |                       \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[11.655903] (-) TimerEvent: {}
+[11.756205] (-) TimerEvent: {}
+[11.857156] (-) TimerEvent: {}
+[11.957676] (-) TimerEvent: {}
+[12.058818] (-) TimerEvent: {}
+[12.159991] (-) TimerEvent: {}
+[12.261247] (-) TimerEvent: {}
+[12.361884] (-) TimerEvent: {}
+[12.462469] (-) TimerEvent: {}
+[12.563023] (-) TimerEvent: {}
+[12.663734] (-) TimerEvent: {}
+[12.764593] (-) TimerEvent: {}
+[12.865404] (-) TimerEvent: {}
+[12.966393] (-) TimerEvent: {}
+[13.067150] (-) TimerEvent: {}
+[13.167661] (-) TimerEvent: {}
+[13.182668] (base_demo_cpp) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/base_node.dir/build.make:76\xef\xbc\x9aCMakeFiles/base_node.dir/src/base_node.cpp.o] \xe9\x94\x99\xe8\xaf\xaf 1\n'}
+[13.182916] (base_demo_cpp) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:756\xef\xbc\x9aCMakeFiles/base_node.dir/all] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[13.184163] (base_demo_cpp) StderrLine: {'line': b'gmake: *** [Makefile:146\xef\xbc\x9aall] \xe9\x94\x99\xe8\xaf\xaf 2\n'}
+[13.186187] (base_demo_cpp) CommandEnded: {'returncode': 2}
+[13.203007] (base_demo_cpp) JobEnded: {'identifier': 'base_demo_cpp', 'rc': 2}
+[13.203831] (-) EventReactorShutdown: {}

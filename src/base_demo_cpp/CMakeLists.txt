@@ -10,6 +10,7 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
 
 # 编译 talker_node 发布者节点
 add_executable(talker_node src/talker_node.cpp)
@@ -25,6 +26,13 @@ ament_target_dependencies(listener_node
   std_msgs
 )
 
+rosidl_generate_interfaces(${PROJECT_NAME}
+  "msg/BaseStatus.msg"
+)
+
+rosidl_get_typesupport_target(cpp_typesupport_target
+  ${PROJECT_NAME} rosidl_typesupport_cpp)
+
 add_executable(base_status_node src/base_status_node.cpp)
 ament_target_dependencies(base_status_node rclcpp std_msgs)
 
@@ -32,7 +40,11 @@ add_executable(cmd_vel_listener_node src/cmd_vel_listener_node.cpp)
 ament_target_dependencies(cmd_vel_listener_node rclcpp geometry_msgs)
 
 add_executable(base_node src/base_node.cpp)
-ament_target_dependencies(base_node rclcpp std_msgs geometry_msgs)
+ament_target_dependencies(base_node rclcpp geometry_msgs)
+
+target_link_libraries(base_node
+  "${cpp_typesupport_target}"
+)
 
 # 安装可执行文件到 install/base_demo_cpp/lib/base_demo_cpp/
 # 这样 ros2 run base_demo_cpp talker_node / listener_node 才能找到
@@ -53,5 +65,7 @@ if(BUILD_TESTING)
   set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
 endif()
+
+ament_export_dependencies(rosidl_default_runtime)
 
 ament_package()
