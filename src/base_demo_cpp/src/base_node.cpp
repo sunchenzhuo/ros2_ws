@@ -3,7 +3,7 @@
  * @作者           : 树
  * @创建时间         : 2026-06-04 14:10:58
  * @最后编辑         : 树
- * @最后编辑时间       : 2026-06-04 17:51:21
+ * @最后编辑时间       : 2026-06-05 17:19:36
  * @Version      : V1.0.0
  * @功能描述         :ROS2 底盘模拟节点。该节点订阅 /cmd_vel 速度控制话题，接收底盘运动指令，并周期性发布 /base/status 底盘状态信息。
  * @Copyright    : Copyright (c) 2026 by 树, All Rights Reserved.
@@ -15,10 +15,12 @@
 #include <memory>     // std::make_shared，用于创建智能指针
 #include <functional> // std::bind、std::placeholders
 #include <mutex>
+#include <vector>
 
 #include "rclcpp/rclcpp.hpp"           // ROS2 C++ 客户端库
 #include "geometry_msgs/msg/twist.hpp" // Twist 速度控制消息类型
 #include "std_msgs/msg/string.hpp"     // String 字符串消息类型
+#include "rcl_interfaces/msg/set_parameters_result.hpp"
 
 // 启用 chrono 时间字面量。
 // 使用后可以直接写 1000ms、1s 这种时间表达
@@ -62,11 +64,36 @@ private:
      */
     rclcpp::TimerBase::SharedPtr timer_;
 
+    /**
+     * @brief /cmd_vel 订阅回调组。
+     *
+     * callback group 用于控制回调函数的调度方式。
+     * 这里将 /cmd_vel 订阅回调单独放到一个回调组中。
+     */
+    rclcpp::CallbackGroup::SharedPtr cmd_group_;
+    /**
+     * @brief 定时器回调组。
+     *
+     * 定时器回调 onTimer() 使用独立回调组。
+     * 在 MultiThreadedExecutor 下，不同回调组中的回调可能被不同线程调度。
+     */
+    rclcpp::CallbackGroup::SharedPtr timer_group_;
+    /**
+     * @brief 最近一次收到 /cmd_vel 指令的时间。
+     *
+     * 用于判断速度控制指令是否超时。
+     */
+    rclcpp::Time last_cmd_time_;
+
+    rclcpp::node_interfaces::OnSetParametersCallbackHandle::SharedPtr param_call_handle_;
+
     int seq_ = 0;
     double vx_ = 0.0;
     double vy_ = 0.0;
     double wz_ = 0.0;
+    int cmd_timeout_ms_ = 1000;
     std::mutex cmd_mutex_;
+    bool cmd_timeout_active_ = false;
 
 private:
     /**
@@ -86,13 +113,24 @@ private:
      */
     void onCmdVel(const geometry_msgs::msg::Twist::SharedPtr msgs)
     {
-        std::lock_guard<std::mutex> lock(cmd_mutex_);
-        vx_ = msgs->linear.x;
-        vy_ = msgs->linear.y;
-        wz_ = msgs->angular.z;
+        {
+            // 加锁更新共享速度和时间状态。
+            std::lock_guard<std::mutex>
+                lock(cmd_mutex_);
+            vx_ = msgs->linear.x;
+            vy_ = msgs->linear.y;
+            wz_ = msgs->angular.z;
+            // 记录最近一次收到 /cmd_vel 的时间。
+            last_cmd_time_ = this->now();
+            // 收到新指令后，清除超时状态。
+            cmd_timeout_active_ = false;
+        }
 
         RCLCPP_INFO(this->get_logger(),
-                    "receive /cmd_vel vx=%.2f vy=%.2f wz=%.2f", vx_, vy_, wz_);
+                    "receive /cmd_vel vx=%.2f vy=%.2f wz=%.2f",
+                    msgs->linear.x,
+                    msgs->linear.y,
+                    msgs->angular.z);
     }
 
     /**
@@ -101,16 +139,12 @@ private:
      * 该函数由 ROS2 定时器周期性调用，用于发布底盘状态。
      *
      * 每次触发时，会完成以下流程：
-     * 1. 从成员变量中读取当前 vx、vy、wz；
-     * 2. 模拟生成电池电压 battery_voltage；
-     * 3. 根据电池电压判断错误状态 err；
-     * 4. 拼接状态字符串；
-     * 5. 发布到 /base/status 话题；
-     * 6. 状态序号 seq_ 自增。
-     *
-     * 注意：
-     * 为了避免长时间持锁，本函数只在锁内复制 vx_、vy_、wz_，
-     * 后续字符串拼接、日志输出、消息发布都在锁外执行。
+     * 1. 判断 /cmd_vel 是否超时；
+     * 2. 如果未超时，读取当前 vx、vy、wz；
+     * 3. 如果已超时，将 vx、vy、wz 置为 0；
+     * 4. 模拟生成电池电压 battery_voltage；
+     * 5. 拼接状态字符串；
+     * 6. 发布到 /base/status 话题。
      */
     void onTimer()
     {
@@ -119,15 +153,100 @@ private:
         double current_vx = 0.0;
         double current_vy = 0.0;
         double current_wz = 0.0;
+        int current_cmd_timeout_ms = 1000;
+
+        // 标记当前这次定时器检查时，/cmd_vel 是否已经超时。
+        // true  表示超过 cmd_timeout_ms_ 时间没有收到新的速度指令；
+        // false 表示 /cmd_vel 指令仍然有效。
+        bool cmd_timeout = false;
+        // 标记本轮是否需要打印超时告警。
+        // 这个变量用于控制“只在刚进入超时状态时打印一次告警”，避免每秒重复刷日志。
+        bool should_warn_timeout = false;
+
+        // 保存最近一次收到 /cmd_vel 指令的时间快照。
+        // 注意：这里使用局部变量，是为了在锁内快速复制共享数据，锁外再做耗时判断。
+        rclcpp::Time last_cmd_time;
+        // 保存当前是否已经处于超时状态的快照。
+        // cmd_timeout_active_ 是共享变量，需要加锁读取；
+        // timeout_active 是它的本地副本，后续锁外判断使用。
+        bool timeout_active = false;
 
         {
-            // 加锁读取共享速度数据。
+            // 加锁读取共享状态。
+            //
+            // vx_、vy_、wz_、last_cmd_time_、cmd_timeout_active_
+            // 可能会被 onCmdVel() 回调更新。
+            //
+            // 当前 onTimer() 也要读取这些数据，因此必须加锁，
+            // 避免多线程读写导致数据竞争。
             std::lock_guard<std::mutex> lock(cmd_mutex_);
-            // // 复制当前速度状态到局部变量。
+
+            // 复制当前速度到局部变量。
+            // 这样锁释放后，后续拼接状态、发布消息时都使用局部变量，
+            // 不需要长时间持有 mutex。
             current_vx = vx_;
             current_vy = vy_;
             current_wz = wz_;
+
+            // 复制最近一次收到 /cmd_vel 的时间。
+            last_cmd_time = last_cmd_time_;
+            // 复制当前是否已经处于超时状态。
+            timeout_active = cmd_timeout_active_;
+
+            current_cmd_timeout_ms = cmd_timeout_ms_;
         }
+
+        // 获取当前 ROS2 时间。
+        const auto now = this->now();
+        // 计算距离上一次收到 /cmd_vel 已经过去了多少毫秒。
+        // now - last_cmd_time 得到时间差，单位是纳秒；
+        // 除以 1000000 后转换成毫秒。
+        const long elapsed_ms = static_cast<long>((now - last_cmd_time).nanoseconds() / 1000000);
+
+        // 判断 /cmd_vel 是否超时。
+        // 如果距离上一次收到控制指令的时间超过 cmd_timeout_ms_，则认为控制指令超时。
+        cmd_timeout = elapsed_ms > current_cmd_timeout_ms;
+
+        if (cmd_timeout)
+        {
+            // 控制指令超时后，将速度置 0。
+            //
+            // 这模拟真实底盘里的安全停车逻辑：
+            // 如果长时间收不到上层控制指令，不能继续沿用旧速度运行，
+            // 否则机器人/AGV 可能一直运动，存在安全风险。
+            current_vx = 0.0;
+            current_vy = 0.0;
+            current_wz = 0.0;
+
+            // 只在刚进入超时状态时打印一次告警。
+            //
+            // timeout_active 是刚才从 cmd_timeout_active_ 复制出来的快照。
+            // 如果它是 false，说明之前还没有进入超时状态；
+            // 本轮第一次发现超时，就需要打印告警。
+            if (!timeout_active)
+            {
+                // 标记本轮需要打印超时告警。
+                should_warn_timeout = true;
+
+                // 更新共享超时状态。
+                //
+                // cmd_timeout_active_ 是成员变量，可能被 onCmdVel() 修改，
+                // 所以写它时也要加锁。
+                std::lock_guard<std::mutex> lock(cmd_mutex_);
+                cmd_timeout_active_ = true;
+            }
+        }
+
+        // 如果本轮是“刚进入超时状态”，则打印一次告警日志。
+        if (should_warn_timeout)
+        {
+            RCLCPP_WARN(this->get_logger(),
+                        "cmd_vel timeout, stop chassis, elapsed_ms=%ld, timeout_ms=%d",
+                        elapsed_ms,
+                        current_cmd_timeout_ms);
+        }
+
+        // 模拟电池电压。
         double battery_voltage = 12.6 - 0.01 * seq_;
         std::string err = "OK";
 
@@ -137,14 +256,120 @@ private:
             err = "LOW_BATTERY";
         }
 
+        // 创建 ROS2 字符串消息。
         std_msgs::msg::String msg;
+
+        // 拼接底盘状态字符串。
         std::ostringstream oss;
-        oss << std::fixed << std::setprecision(2) << " seq=" << seq_ << " vx=" << current_vx << " vy=" << current_vy << " wz=" << current_wz << " battery_voltage=" << battery_voltage << " err=" << err;
+        oss << std::fixed << std::setprecision(2)
+            << " seq=" << seq_
+            << " vx=" << current_vx
+            << " vy=" << current_vy
+            << " wz=" << current_wz
+            << " battery_voltage=" << battery_voltage
+            << " err=" << err
+            << " cmd_timeout=" << (cmd_timeout ? 1 : 0);
         msg.data = oss.str();
         status_pub_->publish(msg);
 
         RCLCPP_INFO(this->get_logger(), "publish /base/status: %s", msg.data.c_str());
         seq_++;
+    }
+
+    /**
+     * @brief ROS2 参数动态修改回调函数
+     *
+     * 当节点运行过程中通过 ros2 param set 修改参数时，
+     * ROS2 会自动调用该回调函数。
+     *
+     * 当前函数主要处理 cmd_timeout_ms 参数：
+     * - 用于控制 /cmd_vel 指令的超时时间
+     * - 如果超过该时间没有收到新的速度指令，则底盘进入安全停车逻辑
+     *
+     * @param parameters 本次被修改的参数列表
+     * @return rcl_interfaces::msg::SetParametersResult
+     *         返回参数修改是否成功，以及失败原因
+     */
+    rcl_interfaces::msg::SetParametersResult onParamterChanger(const std::vector<rclcpp::Parameter> &parameters)
+    {
+        // 创建参数修改结果对象。
+        // ROS2 要求参数回调必须返回 SetParametersResult，
+        // 用于告诉系统本次参数修改是否允许生效。
+        rcl_interfaces::msg::SetParametersResult result;
+        // 默认认为本次参数修改成功。
+        // 如果后续检查发现参数非法，再将 successful 改为 false。
+        result.successful = true;
+
+        // 遍历本次修改的所有参数。
+        // 一次 ros2 param set 通常只修改一个参数，
+        // 但 ROS2 接口支持一次传入多个参数，所以这里使用循环处理。
+        for (const auto &param : parameters)
+        {
+            // 判断当前参数是否是底盘控制指令超时时间参数。
+            //
+            // cmd_timeout_ms 表示：
+            // 如果超过该毫秒数没有收到新的 /cmd_vel 指令，
+            // 则认为上层控制指令超时，底盘应停止运动。
+            if (param.get_name() == "cmd_timeout_ms")
+            {
+                // 将参数值读取为 int 类型。
+                // 注意：这里要求 cmd_timeout_ms 在声明参数时就是整数类型，
+                // 否则 as_int() 可能会触发异常。
+                int new_timeout = param.as_int();
+
+                // 参数合法性校验。
+                //
+                // 超时时间必须大于 0。
+                // 如果设置成 0 或负数，超时判断逻辑会失去意义，
+                // 甚至可能导致底盘控制行为异常。
+                if (new_timeout <= 0)
+                {
+                    // 标记本次参数修改失败。
+                    result.successful = false;
+
+                    // 返回失败原因。
+                    // 用户执行 ros2 param set 时，可以看到该错误信息。
+                    result.reason = "cmd_timeout_ms must be > 0";
+
+                    // 直接返回，不允许该非法参数生效。
+                    return result;
+                }
+                {
+                    // 加锁保护共享状态。
+                    //
+                    // cmd_timeout_ms_、cmd_timeout_active_、last_cmd_time_
+                    // 可能会被 onTimer() 或 onCmdVel() 等回调同时访问。
+                    //
+                    // 因此修改这些成员变量时必须加锁，
+                    // 避免多线程并发读写导致数据竞争。
+                    std::lock_guard<std::mutex> lock(cmd_mutex_);
+
+                    // 更新底盘控制指令超时时间。
+                    cmd_timeout_ms_ = new_timeout;
+
+                    // 重置超时状态。
+                    //
+                    // 因为超时时间刚刚被重新设置，
+                    // 这里将 cmd_timeout_active_ 置为 false，
+                    // 表示当前不再认为底盘处于超时状态。
+                    cmd_timeout_active_ = false;
+
+                    // 重置最近一次指令时间。
+                    //
+                    // 这样做可以避免刚修改完参数后，
+                    // onTimer() 立刻使用旧的 last_cmd_time_ 判断为超时。
+                    //
+                    // 相当于告诉系统：
+                    // 从当前时间开始重新计算 /cmd_vel 超时时间。
+                    last_cmd_time_ = this->now();
+                }
+                // 打印参数修改成功日志，便于运行时排查。
+                RCLCPP_INFO(this->get_logger(),
+                            "cmd_timeout_ms changed to %d",
+                            new_timeout);
+            }
+        }
+        return result;
     }
 
 public:
@@ -153,40 +378,68 @@ public:
      *
      * 构造函数负责初始化底盘节点，包括：
      * 1. 设置节点名称为 base_node；
-     * 2. 创建 /base/status 状态发布者；
-     * 3. 创建 /cmd_vel 速度指令订阅者；
-     * 4. 创建周期定时器，定时发布底盘状态；
-     * 5. 输出节点启动日志。
+     * 2. 创建 callback group；
+     * 3. 创建 /base/status 状态发布者；
+     * 4. 创建 /cmd_vel 速度指令订阅者；
+     * 5. 创建周期定时器；
+     * 6. 输出节点启动日志。
      */
     BaseNode() : Node("base_node")
     {
-        // 创建底盘状态发布者。
+        // 声明参数：/cmd_vel 超时时间，默认 1000ms。
+        this->declare_parameter<int>("cmd_timeout_ms", 1000);
+        cmd_timeout_ms_ = this->get_parameter("cmd_timeout_ms").as_int();
+        param_call_handle_ = this->add_on_set_parameters_callback(
+            std::bind(
+                &BaseNode::onParamterChanger,
+                this,
+                std::placeholders::_1));
+
+        // 初始化最近一次控制指令时间。
+        // 节点刚启动时还没有收到 /cmd_vel，这里先用当前时间初始化。
+        cmd_timeout_active_ = false;
+        last_cmd_time_ = this->now();
+
+        // 先创建回调组。
         //
-        // 话题名：/base/status
-        // 消息类型：std_msgs::msg::String
-        // QoS 队列深度：10
+        // 注意：
+        // callback group 必须先创建，再传给订阅者和定时器。
+        // 如果先把空的 cmd_group_ / timer_group_ 传进去，再创建它们，
+        // 订阅者和定时器并不会自动绑定到后面新创建的回调组上。
+        cmd_group_ = this->create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);
+        timer_group_ = this->create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);
+
+        // 创建底盘状态发布者。
         status_pub_ = this->create_publisher<std_msgs::msg::String>("/base/status", 10);
 
+        // 创建订阅选项，并指定 /cmd_vel 订阅者使用 cmd_group_ 回调组。
+        rclcpp::SubscriptionOptions cmd_options;
+        cmd_options.callback_group = cmd_group_;
         // 创建速度控制指令订阅者。
         //
         // 话题名：/cmd_vel
         // 消息类型：geometry_msgs::msg::Twist
         // QoS 队列深度：10
         //
-        // 注意：std::bind 绑定成员函数时，必须传入 this。
-        // 正确写法：
-        // std::bind(&BaseNode::onCmdVel, this, std::placeholders::_1)
+        // 注意：
+        // 这里建议写成绝对话题名 "/cmd_vel"，避免命名空间影响。
         cmd_vel_sub_ = this->create_subscription<geometry_msgs::msg::Twist>(
-            "cmd_vel",
+            "/cmd_vel",
             10,
-            std::bind(&BaseNode::onCmdVel, this, std::placeholders::_1));
+            std::bind(&BaseNode::onCmdVel, this, std::placeholders::_1),
+            cmd_options);
 
         // 创建定时器。
         //
         // 1000ms 表示每 1000 毫秒触发一次，也就是每 1 秒调用一次 onTimer()。
-        timer_ = this->create_wall_timer(1000ms, std::bind(&BaseNode::onTimer, this));
+        //
+        // 第三个参数 timer_group_ 表示该定时器回调属于 timer_group_。
+        timer_ = this->create_wall_timer(1000ms,
+                                         std::bind(&BaseNode::onTimer, this),
+                                         timer_group_);
 
         RCLCPP_INFO(this->get_logger(), "base_node started");
+        RCLCPP_INFO(this->get_logger(), "cmd_timeout_ms=%d", cmd_timeout_ms_);
     }
 };
 
