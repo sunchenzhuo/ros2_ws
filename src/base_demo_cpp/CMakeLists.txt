@@ -45,6 +45,15 @@ ament_target_dependencies(base_node rclcpp geometry_msgs)
 target_link_libraries(base_node
   "${cpp_typesupport_target}"
 )
+add_executable(cmd_vel_test_node src/cmd_vel_test_node.cpp)
+ament_target_dependencies(cmd_vel_test_node rclcpp geometry_msgs)
+
+add_executable(base_status_listener_node src/base_status_listener_node.cpp)
+ament_target_dependencies(base_status_listener_node rclcpp)
+
+target_link_libraries(base_status_listener_node
+  "${cpp_typesupport_target}"
+)
 
 # 安装可执行文件到 install/base_demo_cpp/lib/base_demo_cpp/
 # 这样 ros2 run base_demo_cpp talker_node / listener_node 才能找到
@@ -54,9 +63,15 @@ install(TARGETS
   base_status_node
   cmd_vel_listener_node
   base_node
+  base_status_listener_node
+  cmd_vel_test_node
   DESTINATION lib/${PROJECT_NAME}
 )
 
+install(DIRECTORY
+  launch
+  DESTINATION share/${PROJECT_NAME}
+)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

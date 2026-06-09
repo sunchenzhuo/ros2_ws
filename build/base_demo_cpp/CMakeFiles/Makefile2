@@ -81,6 +81,8 @@ all: CMakeFiles/base_demo_cpp_s__rosidl_typesupport_c.dir/all
 all: CMakeFiles/base_status_node.dir/all
 all: CMakeFiles/cmd_vel_listener_node.dir/all
 all: CMakeFiles/base_node.dir/all
+all: CMakeFiles/cmd_vel_test_node.dir/all
+all: CMakeFiles/base_status_listener_node.dir/all
 all: base_demo_cpp__py/all
 all: base_demo_cpp__rs/all
 .PHONY : all
@@ -114,6 +116,8 @@ clean: CMakeFiles/base_demo_cpp_s__rosidl_typesupport_c.dir/clean
 clean: CMakeFiles/base_status_node.dir/clean
 clean: CMakeFiles/cmd_vel_listener_node.dir/clean
 clean: CMakeFiles/base_node.dir/clean
+clean: CMakeFiles/cmd_vel_test_node.dir/clean
+clean: CMakeFiles/base_status_listener_node.dir/clean
 clean: base_demo_cpp__py/clean
 clean: base_demo_cpp__rs/clean
 .PHONY : clean
@@ -207,7 +211,7 @@ CMakeFiles/base_demo_cpp_uninstall.dir/clean:
 CMakeFiles/talker_node.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/talker_node.dir/build.make CMakeFiles/talker_node.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/talker_node.dir/build.make CMakeFiles/talker_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/shu/ros2_ws/build/base_demo_cpp/CMakeFiles --progress-num=44,45 "Built target talker_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/shu/ros2_ws/build/base_demo_cpp/CMakeFiles --progress-num=48,49 "Built target talker_node"
 .PHONY : CMakeFiles/talker_node.dir/all
 
 # Build rule for subdir invocation for target.
@@ -233,7 +237,7 @@ CMakeFiles/talker_node.dir/clean:
 CMakeFiles/listener_node.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/listener_node.dir/build.make CMakeFiles/listener_node.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/listener_node.dir/build.make CMakeFiles/listener_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/shu/ros2_ws/build/base_demo_cpp/CMakeFiles --progress-num=42,43 "Built target listener_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/shu/ros2_ws/build/base_demo_cpp/CMakeFiles --progress-num=46,47 "Built target listener_node"
 .PHONY : CMakeFiles/listener_node.dir/all
 
 # Build rule for subdir invocation for target.
@@ -700,7 +704,7 @@ CMakeFiles/base_demo_cpp_s__rosidl_typesupport_c.dir/clean:
 CMakeFiles/base_status_node.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/base_status_node.dir/build.make CMakeFiles/base_status_node.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/base_status_node.dir/build.make CMakeFiles/base_status_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/shu/ros2_ws/build/base_demo_cpp/CMakeFiles --progress-num=38,39 "Built target base_status_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/shu/ros2_ws/build/base_demo_cpp/CMakeFiles --progress-num=40,41 "Built target base_status_node"
 .PHONY : CMakeFiles/base_status_node.dir/all
 
 # Build rule for subdir invocation for target.
@@ -726,7 +730,7 @@ CMakeFiles/base_status_node.dir/clean:
 CMakeFiles/cmd_vel_listener_node.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmd_vel_listener_node.dir/build.make CMakeFiles/cmd_vel_listener_node.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmd_vel_listener_node.dir/build.make CMakeFiles/cmd_vel_listener_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/shu/ros2_ws/build/base_demo_cpp/CMakeFiles --progress-num=40,41 "Built target cmd_vel_listener_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/shu/ros2_ws/build/base_demo_cpp/CMakeFiles --progress-num=42,43 "Built target cmd_vel_listener_node"
 .PHONY : CMakeFiles/cmd_vel_listener_node.dir/all
 
 # Build rule for subdir invocation for target.
@@ -772,6 +776,60 @@ base_node: CMakeFiles/base_node.dir/rule
 CMakeFiles/base_node.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/base_node.dir/build.make CMakeFiles/base_node.dir/clean
 .PHONY : CMakeFiles/base_node.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/cmd_vel_test_node.dir
+
+# All Build rule for target.
+CMakeFiles/cmd_vel_test_node.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmd_vel_test_node.dir/build.make CMakeFiles/cmd_vel_test_node.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmd_vel_test_node.dir/build.make CMakeFiles/cmd_vel_test_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/shu/ros2_ws/build/base_demo_cpp/CMakeFiles --progress-num=44,45 "Built target cmd_vel_test_node"
+.PHONY : CMakeFiles/cmd_vel_test_node.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/cmd_vel_test_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shu/ros2_ws/build/base_demo_cpp/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/cmd_vel_test_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shu/ros2_ws/build/base_demo_cpp/CMakeFiles 0
+.PHONY : CMakeFiles/cmd_vel_test_node.dir/rule
+
+# Convenience name for target.
+cmd_vel_test_node: CMakeFiles/cmd_vel_test_node.dir/rule
+.PHONY : cmd_vel_test_node
+
+# clean rule for target.
+CMakeFiles/cmd_vel_test_node.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmd_vel_test_node.dir/build.make CMakeFiles/cmd_vel_test_node.dir/clean
+.PHONY : CMakeFiles/cmd_vel_test_node.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/base_status_listener_node.dir
+
+# All Build rule for target.
+CMakeFiles/base_status_listener_node.dir/all: CMakeFiles/base_demo_cpp__rosidl_generator_c.dir/all
+CMakeFiles/base_status_listener_node.dir/all: CMakeFiles/base_demo_cpp__cpp.dir/all
+CMakeFiles/base_status_listener_node.dir/all: CMakeFiles/base_demo_cpp__rosidl_typesupport_cpp.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/base_status_listener_node.dir/build.make CMakeFiles/base_status_listener_node.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/base_status_listener_node.dir/build.make CMakeFiles/base_status_listener_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/shu/ros2_ws/build/base_demo_cpp/CMakeFiles --progress-num=38,39 "Built target base_status_listener_node"
+.PHONY : CMakeFiles/base_status_listener_node.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/base_status_listener_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shu/ros2_ws/build/base_demo_cpp/CMakeFiles 12
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/base_status_listener_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shu/ros2_ws/build/base_demo_cpp/CMakeFiles 0
+.PHONY : CMakeFiles/base_status_listener_node.dir/rule
+
+# Convenience name for target.
+base_status_listener_node: CMakeFiles/base_status_listener_node.dir/rule
+.PHONY : base_status_listener_node
+
+# clean rule for target.
+CMakeFiles/base_status_listener_node.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/base_status_listener_node.dir/build.make CMakeFiles/base_status_listener_node.dir/clean
+.PHONY : CMakeFiles/base_status_listener_node.dir/clean
 
 #=============================================================================
 # Target rules for target /home/shu/ros2_ws/build/base_demo_cpp/base_demo_cpp__py/CMakeFiles/base_demo_cpp__py.dir

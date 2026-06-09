@@ -65,6 +65,9 @@
 /home/shu/ros2_ws/install/base_demo_cpp/lib/base_demo_cpp/base_status_node
 /home/shu/ros2_ws/install/base_demo_cpp/lib/base_demo_cpp/cmd_vel_listener_node
 /home/shu/ros2_ws/install/base_demo_cpp/lib/base_demo_cpp/base_node
+/home/shu/ros2_ws/install/base_demo_cpp/lib/base_demo_cpp/base_status_listener_node
+/home/shu/ros2_ws/install/base_demo_cpp/lib/base_demo_cpp/cmd_vel_test_node
+/home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/launch/base_system.launch.py
 /home/shu/ros2_ws/install/base_demo_cpp/share/ament_index/resource_index/package_run_dependencies/base_demo_cpp
 /home/shu/ros2_ws/install/base_demo_cpp/share/ament_index/resource_index/parent_prefix_path/base_demo_cpp
 /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/environment/ament_prefix_path.sh

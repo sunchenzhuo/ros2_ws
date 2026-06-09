@@ -471,6 +471,32 @@ base_node/fast:
 .PHONY : base_node/fast
 
 #=============================================================================
+# Target rules for targets named cmd_vel_test_node
+
+# Build rule for target.
+cmd_vel_test_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cmd_vel_test_node
+.PHONY : cmd_vel_test_node
+
+# fast build rule for target.
+cmd_vel_test_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmd_vel_test_node.dir/build.make CMakeFiles/cmd_vel_test_node.dir/build
+.PHONY : cmd_vel_test_node/fast
+
+#=============================================================================
+# Target rules for targets named base_status_listener_node
+
+# Build rule for target.
+base_status_listener_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 base_status_listener_node
+.PHONY : base_status_listener_node
+
+# fast build rule for target.
+base_status_listener_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/base_status_listener_node.dir/build.make CMakeFiles/base_status_listener_node.dir/build
+.PHONY : base_status_listener_node/fast
+
+#=============================================================================
 # Target rules for targets named base_demo_cpp__py
 
 # Build rule for target.
@@ -832,6 +858,30 @@ src/base_node.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/base_node.dir/build.make CMakeFiles/base_node.dir/src/base_node.cpp.s
 .PHONY : src/base_node.cpp.s
 
+src/base_status_listener_node.o: src/base_status_listener_node.cpp.o
+.PHONY : src/base_status_listener_node.o
+
+# target to build an object file
+src/base_status_listener_node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/base_status_listener_node.dir/build.make CMakeFiles/base_status_listener_node.dir/src/base_status_listener_node.cpp.o
+.PHONY : src/base_status_listener_node.cpp.o
+
+src/base_status_listener_node.i: src/base_status_listener_node.cpp.i
+.PHONY : src/base_status_listener_node.i
+
+# target to preprocess a source file
+src/base_status_listener_node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/base_status_listener_node.dir/build.make CMakeFiles/base_status_listener_node.dir/src/base_status_listener_node.cpp.i
+.PHONY : src/base_status_listener_node.cpp.i
+
+src/base_status_listener_node.s: src/base_status_listener_node.cpp.s
+.PHONY : src/base_status_listener_node.s
+
+# target to generate assembly for a file
+src/base_status_listener_node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/base_status_listener_node.dir/build.make CMakeFiles/base_status_listener_node.dir/src/base_status_listener_node.cpp.s
+.PHONY : src/base_status_listener_node.cpp.s
+
 src/base_status_node.o: src/base_status_node.cpp.o
 .PHONY : src/base_status_node.o
 
@@ -879,6 +929,30 @@ src/cmd_vel_listener_node.s: src/cmd_vel_listener_node.cpp.s
 src/cmd_vel_listener_node.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmd_vel_listener_node.dir/build.make CMakeFiles/cmd_vel_listener_node.dir/src/cmd_vel_listener_node.cpp.s
 .PHONY : src/cmd_vel_listener_node.cpp.s
+
+src/cmd_vel_test_node.o: src/cmd_vel_test_node.cpp.o
+.PHONY : src/cmd_vel_test_node.o
+
+# target to build an object file
+src/cmd_vel_test_node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmd_vel_test_node.dir/build.make CMakeFiles/cmd_vel_test_node.dir/src/cmd_vel_test_node.cpp.o
+.PHONY : src/cmd_vel_test_node.cpp.o
+
+src/cmd_vel_test_node.i: src/cmd_vel_test_node.cpp.i
+.PHONY : src/cmd_vel_test_node.i
+
+# target to preprocess a source file
+src/cmd_vel_test_node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmd_vel_test_node.dir/build.make CMakeFiles/cmd_vel_test_node.dir/src/cmd_vel_test_node.cpp.i
+.PHONY : src/cmd_vel_test_node.cpp.i
+
+src/cmd_vel_test_node.s: src/cmd_vel_test_node.cpp.s
+.PHONY : src/cmd_vel_test_node.s
+
+# target to generate assembly for a file
+src/cmd_vel_test_node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cmd_vel_test_node.dir/build.make CMakeFiles/cmd_vel_test_node.dir/src/cmd_vel_test_node.cpp.s
+.PHONY : src/cmd_vel_test_node.cpp.s
 
 src/listener_node.o: src/listener_node.cpp.o
 .PHONY : src/listener_node.o
@@ -962,8 +1036,10 @@ help:
 	@echo "... base_demo_cpp_s__rosidl_typesupport_fastrtps_c"
 	@echo "... base_demo_cpp_s__rosidl_typesupport_introspection_c"
 	@echo "... base_node"
+	@echo "... base_status_listener_node"
 	@echo "... base_status_node"
 	@echo "... cmd_vel_listener_node"
+	@echo "... cmd_vel_test_node"
 	@echo "... listener_node"
 	@echo "... talker_node"
 	@echo "... rosidl_generator_c/base_demo_cpp/msg/detail/base_status__description.o"
@@ -1008,12 +1084,18 @@ help:
 	@echo "... src/base_node.o"
 	@echo "... src/base_node.i"
 	@echo "... src/base_node.s"
+	@echo "... src/base_status_listener_node.o"
+	@echo "... src/base_status_listener_node.i"
+	@echo "... src/base_status_listener_node.s"
 	@echo "... src/base_status_node.o"
 	@echo "... src/base_status_node.i"
 	@echo "... src/base_status_node.s"
 	@echo "... src/cmd_vel_listener_node.o"
 	@echo "... src/cmd_vel_listener_node.i"
 	@echo "... src/cmd_vel_listener_node.s"
+	@echo "... src/cmd_vel_test_node.o"
+	@echo "... src/cmd_vel_test_node.i"
+	@echo "... src/cmd_vel_test_node.s"
 	@echo "... src/listener_node.o"
 	@echo "... src/listener_node.i"
 	@echo "... src/listener_node.s"

@@ -852,6 +852,8 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/base_status_node.dir/DependInfo.cmake"
   "CMakeFiles/cmd_vel_listener_node.dir/DependInfo.cmake"
   "CMakeFiles/base_node.dir/DependInfo.cmake"
+  "CMakeFiles/cmd_vel_test_node.dir/DependInfo.cmake"
+  "CMakeFiles/base_status_listener_node.dir/DependInfo.cmake"
   "/home/shu/ros2_ws/build/base_demo_cpp/base_demo_cpp__py/CMakeFiles/base_demo_cpp__py.dir/DependInfo.cmake"
   "/home/shu/ros2_ws/build/base_demo_cpp/base_demo_cpp__rs/CMakeFiles/base_demo_cpp__rs.dir/DependInfo.cmake"
   )
