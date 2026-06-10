@@ -1,0 +1,19 @@
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171[m[K,
+                 from [01m[K/home/shu/ros2_ws/src/base_demo_cpp/src/cmd_vel_test_node.cpp:22[m[K:
+[01m[K/home/shu/ros2_ws/src/base_demo_cpp/src/cmd_vel_test_node.cpp:[m[K In constructor ‘[01m[KCmdVelTestNode::[01;32m[KCmdVelTestNode[m[K()[m[K’:
+[01m[K/home/shu/ros2_ws/src/base_demo_cpp/src/cmd_vel_test_node.cpp:76:11:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%f[m[K’ expects argument of type ‘[01m[Kdouble[m[K’, but argument 8 has type ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+   76 |           [01;35m[K"cmd_vel_test_node started,test_vx=%.2f test_vy=%.2f test_wz=%.2f publish_period_ms=%.2f"[m[K,
+      |           [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+......
+   80 |           [32m[Kpublish_period_ms_[m[K
+      |           [32m[K~~~~~~~~~~~~~~~~~~[m[K
+      |           [32m[K|[m[K
+      |           [32m[Kint[m[K
+[01m[K/home/shu/ros2_ws/src/base_demo_cpp/src/cmd_vel_test_node.cpp:76:98:[m[K [01;36m[Knote: [m[Kformat string is defined here
+   76 |           "cmd_vel_test_node started,test_vx=%.2f test_vy=%.2f test_wz=%.2f publish_period_ms=[01;36m[K%.2f[m[K",
+      |                                                                                               [01;36m[K~~~^[m[K
+      |                                                                                                  [01;36m[K|[m[K
+      |                                                                                                  [01;36m[Kdouble[m[K
+      |                                                                                               [32m[K%.2d[m[K

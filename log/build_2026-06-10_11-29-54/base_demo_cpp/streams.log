@@ -1,0 +1,195 @@
+[0.012s] Invoking command in '/home/shu/ros2_ws/build/base_demo_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/shu/ros2_ws/build/base_demo_cpp -- -j4 -l4
+[0.137s] [  2%] Built target base_demo_cpp__rosidl_generator_type_description
+[0.137s] [  4%] Built target base_demo_cpp__rs
+[0.141s] [  8%] Built target talker_node
+[0.141s] [ 12%] Built target listener_node
+[0.160s] [ 12%] Built target ament_cmake_python_copy_base_demo_cpp
+[0.166s] [ 16%] Built target base_status_node
+[0.167s] [ 20%] Built target cmd_vel_listener_node
+[0.168s] [ 22%] [32mBuilding CXX object CMakeFiles/cmd_vel_test_node.dir/src/cmd_vel_test_node.cpp.o[0m
+[0.178s] [ 24%] Built target base_demo_cpp__cpp
+[0.190s] [ 34%] Built target base_demo_cpp__rosidl_generator_c
+[0.211s] [ 40%] Built target base_demo_cpp__rosidl_typesupport_fastrtps_c
+[0.212s] [ 46%] Built target base_demo_cpp__rosidl_typesupport_fastrtps_cpp
+[0.229s] [ 59%] Built target base_demo_cpp__rosidl_typesupport_introspection_c
+[0.229s] [ 59%] Built target base_demo_cpp__rosidl_typesupport_c
+[0.247s] [ 65%] Built target base_demo_cpp__rosidl_typesupport_introspection_cpp
+[0.249s] [ 71%] Built target base_demo_cpp__rosidl_typesupport_cpp
+[0.264s] [ 71%] Built target base_demo_cpp
+[0.270s] [ 75%] Built target base_node
+[0.284s] [ 79%] Built target base_status_listener_node
+[0.285s] [ 81%] Built target base_demo_cpp__py
+[0.301s] [ 85%] Built target base_demo_cpp__rosidl_generator_py
+[0.318s] [ 89%] Built target base_demo_cpp_s__rosidl_typesupport_introspection_c
+[0.319s] [ 93%] Built target base_demo_cpp_s__rosidl_typesupport_fastrtps_c
+[0.321s] running egg_info
+[0.332s] writing base_demo_cpp.egg-info/PKG-INFO
+[0.333s] writing dependency_links to base_demo_cpp.egg-info/dependency_links.txt
+[0.333s] [ 97%] Built target base_demo_cpp_s__rosidl_typesupport_c
+[0.334s] writing top-level names to base_demo_cpp.egg-info/top_level.txt
+[0.363s] reading manifest file 'base_demo_cpp.egg-info/SOURCES.txt'
+[0.364s] writing manifest file 'base_demo_cpp.egg-info/SOURCES.txt'
+[0.383s] [ 97%] Built target ament_cmake_python_build_base_demo_cpp_egg
+[1.647s] In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[1.647s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27[m[K,
+[1.648s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171[m[K,
+[1.648s]                  from [01m[K/home/shu/ros2_ws/src/base_demo_cpp/src/cmd_vel_test_node.cpp:22[m[K:
+[1.648s] [01m[K/home/shu/ros2_ws/src/base_demo_cpp/src/cmd_vel_test_node.cpp:[m[K In constructor ‘[01m[KCmdVelTestNode::[01;32m[KCmdVelTestNode[m[K()[m[K’:
+[1.648s] [01m[K/home/shu/ros2_ws/src/base_demo_cpp/src/cmd_vel_test_node.cpp:76:11:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%f[m[K’ expects argument of type ‘[01m[Kdouble[m[K’, but argument 8 has type ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+[1.648s]    76 |           [01;35m[K"cmd_vel_test_node started,test_vx=%.2f test_vy=%.2f test_wz=%.2f publish_period_ms=%.2f"[m[K,
+[1.648s]       |           [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.648s] ......
+[1.648s]    80 |           [32m[Kpublish_period_ms_[m[K
+[1.648s]       |           [32m[K~~~~~~~~~~~~~~~~~~[m[K
+[1.648s]       |           [32m[K|[m[K
+[1.648s]       |           [32m[Kint[m[K
+[1.648s] [01m[K/home/shu/ros2_ws/src/base_demo_cpp/src/cmd_vel_test_node.cpp:76:98:[m[K [01;36m[Knote: [m[Kformat string is defined here
+[1.648s]    76 |           "cmd_vel_test_node started,test_vx=%.2f test_vy=%.2f test_wz=%.2f publish_period_ms=[01;36m[K%.2f[m[K",
+[1.648s]       |                                                                                               [01;36m[K~~~^[m[K
+[1.648s]       |                                                                                                  [01;36m[K|[m[K
+[1.648s]       |                                                                                                  [01;36m[Kdouble[m[K
+[1.648s]       |                                                                                               [32m[K%.2d[m[K
+[3.402s] [100%] [32m[1mLinking CXX executable cmd_vel_test_node[0m
+[3.611s] [100%] Built target cmd_vel_test_node
+[3.620s] Invoked command in '/home/shu/ros2_ws/build/base_demo_cpp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/shu/ros2_ws/build/base_demo_cpp -- -j4 -l4
+[3.627s] Invoking command in '/home/shu/ros2_ws/build/base_demo_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/shu/ros2_ws/build/base_demo_cpp
+[3.633s] -- Install configuration: ""
+[3.633s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/ament_index/resource_index/rosidl_interfaces/base_demo_cpp
+[3.634s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/msg/BaseStatus.json
+[3.634s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp
+[3.634s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg
+[3.634s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail
+[3.634s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/base_status__type_support.h
+[3.634s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/base_status__functions.h
+[3.634s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/base_status__description.c
+[3.634s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/base_status__functions.c
+[3.634s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/base_status__struct.h
+[3.634s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/base_status__type_support.c
+[3.634s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/rosidl_generator_c__visibility_control.h
+[3.635s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/base_status.h
+[3.635s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/environment/library_path.sh
+[3.635s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/environment/library_path.dsv
+[3.635s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/libbase_demo_cpp__rosidl_generator_c.so
+[3.636s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp
+[3.636s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg
+[3.636s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail
+[3.636s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/base_status__rosidl_typesupport_fastrtps_c.h
+[3.636s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[3.636s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/libbase_demo_cpp__rosidl_typesupport_fastrtps_c.so
+[3.636s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp
+[3.636s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg
+[3.636s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail
+[3.636s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/base_status__type_support.hpp
+[3.636s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/base_status__builder.hpp
+[3.636s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/base_status__struct.hpp
+[3.636s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/base_status__traits.hpp
+[3.636s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/rosidl_generator_cpp__visibility_control.hpp
+[3.636s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/base_status.hpp
+[3.636s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp
+[3.637s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg
+[3.637s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail
+[3.637s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/dds_fastrtps
+[3.637s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/base_status__rosidl_typesupport_fastrtps_cpp.hpp
+[3.637s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[3.637s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/libbase_demo_cpp__rosidl_typesupport_fastrtps_cpp.so
+[3.637s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp
+[3.637s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg
+[3.637s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail
+[3.637s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/base_status__rosidl_typesupport_introspection_c.h
+[3.637s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/base_status__type_support.c
+[3.637s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[3.637s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/libbase_demo_cpp__rosidl_typesupport_introspection_c.so
+[3.638s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/libbase_demo_cpp__rosidl_typesupport_c.so
+[3.638s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp
+[3.638s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg
+[3.638s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail
+[3.638s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/base_status__rosidl_typesupport_introspection_cpp.hpp
+[3.638s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/base_status__type_support.cpp
+[3.638s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/libbase_demo_cpp__rosidl_typesupport_introspection_cpp.so
+[3.639s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/libbase_demo_cpp__rosidl_typesupport_cpp.so
+[3.639s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/environment/pythonpath.sh
+[3.639s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/environment/pythonpath.dsv
+[3.639s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp-0.0.0-py3.12.egg-info
+[3.639s] -- Installing: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp-0.0.0-py3.12.egg-info/PKG-INFO
+[3.640s] -- Installing: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp-0.0.0-py3.12.egg-info/SOURCES.txt
+[3.640s] -- Installing: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp-0.0.0-py3.12.egg-info/dependency_links.txt
+[3.640s] -- Installing: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp-0.0.0-py3.12.egg-info/top_level.txt
+[3.640s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp
+[3.640s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp/_base_demo_cpp_s.ep.rosidl_typesupport_introspection_c.c
+[3.641s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp/base_demo_cpp_s__rosidl_typesupport_introspection_c.so
+[3.641s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp/_base_demo_cpp_s.ep.rosidl_typesupport_c.c
+[3.641s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp/base_demo_cpp_s__rosidl_typesupport_fastrtps_c.so
+[3.641s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp/__init__.py
+[3.641s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp/_base_demo_cpp_s.ep.rosidl_typesupport_fastrtps_c.c
+[3.641s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp/base_demo_cpp_s__rosidl_typesupport_c.so
+[3.641s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp/msg
+[3.641s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp/msg/__init__.py
+[3.641s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp/msg/_base_status.py
+[3.641s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp/msg/_base_status_s.c
+[3.668s] Listing '/home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp'...
+[3.668s] Listing '/home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp/msg'...
+[3.672s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp/base_demo_cpp_s__rosidl_typesupport_fastrtps_c.so
+[3.673s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp/base_demo_cpp_s__rosidl_typesupport_introspection_c.so
+[3.673s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp/base_demo_cpp_s__rosidl_typesupport_c.so
+[3.674s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/libbase_demo_cpp__rosidl_generator_py.so
+[3.674s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/ament_index/resource_index/rust_packages/base_demo_cpp
+[3.674s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/rust
+[3.674s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/rust/src
+[3.674s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/rust/src/lib.rs
+[3.674s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/rust/src/msg.rs
+[3.675s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/rust/src/msg
+[3.675s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/rust/src/msg/rmw.rs
+[3.675s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/rust/build.rs
+[3.675s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/rust/Cargo.toml
+[3.675s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/msg/BaseStatus.idl
+[3.675s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/msg/BaseStatus.msg
+[3.676s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/base_demo_cpp/talker_node
+[3.677s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/base_demo_cpp/listener_node
+[3.678s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/base_demo_cpp/base_status_node
+[3.679s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/base_demo_cpp/cmd_vel_listener_node
+[3.681s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/base_demo_cpp/base_node
+[3.682s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/base_demo_cpp/base_status_listener_node
+[3.683s] -- Installing: /home/shu/ros2_ws/install/base_demo_cpp/lib/base_demo_cpp/cmd_vel_test_node
+[3.684s] -- Set non-toolchain portion of runtime path of "/home/shu/ros2_ws/install/base_demo_cpp/lib/base_demo_cpp/cmd_vel_test_node" to ""
+[3.684s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/launch
+[3.684s] -- Installing: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/launch/base_system.launch.py
+[3.684s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/ament_index/resource_index/package_run_dependencies/base_demo_cpp
+[3.684s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/ament_index/resource_index/parent_prefix_path/base_demo_cpp
+[3.684s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/environment/ament_prefix_path.sh
+[3.684s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/environment/ament_prefix_path.dsv
+[3.685s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/environment/path.sh
+[3.685s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/environment/path.dsv
+[3.685s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/local_setup.bash
+[3.685s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/local_setup.sh
+[3.685s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/local_setup.zsh
+[3.685s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/local_setup.dsv
+[3.685s] -- Installing: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/package.dsv
+[3.685s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/ament_index/resource_index/packages/base_demo_cpp
+[3.686s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/export_base_demo_cpp__rosidl_generator_cExport.cmake
+[3.686s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/export_base_demo_cpp__rosidl_generator_cExport-noconfig.cmake
+[3.686s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/export_base_demo_cpp__rosidl_typesupport_fastrtps_cExport.cmake
+[3.686s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/export_base_demo_cpp__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[3.687s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/export_base_demo_cpp__rosidl_generator_cppExport.cmake
+[3.687s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/export_base_demo_cpp__rosidl_typesupport_fastrtps_cppExport.cmake
+[3.687s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/export_base_demo_cpp__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[3.688s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/base_demo_cpp__rosidl_typesupport_introspection_cExport.cmake
+[3.688s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/base_demo_cpp__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[3.688s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/base_demo_cpp__rosidl_typesupport_cExport.cmake
+[3.688s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/base_demo_cpp__rosidl_typesupport_cExport-noconfig.cmake
+[3.689s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/base_demo_cpp__rosidl_typesupport_introspection_cppExport.cmake
+[3.689s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/base_demo_cpp__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[3.689s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/base_demo_cpp__rosidl_typesupport_cppExport.cmake
+[3.689s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/base_demo_cpp__rosidl_typesupport_cppExport-noconfig.cmake
+[3.690s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/export_base_demo_cpp__rosidl_generator_pyExport.cmake
+[3.690s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/export_base_demo_cpp__rosidl_generator_pyExport-noconfig.cmake
+[3.690s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/rosidl_cmake-extras.cmake
+[3.690s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/ament_cmake_export_include_directories-extras.cmake
+[3.690s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/ament_cmake_export_libraries-extras.cmake
+[3.690s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/ament_cmake_export_targets-extras.cmake
+[3.690s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[3.690s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/ament_cmake_export_dependencies-extras.cmake
+[3.690s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[3.690s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/base_demo_cppConfig.cmake
+[3.690s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/base_demo_cppConfig-version.cmake
+[3.690s] -- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/package.xml
+[3.692s] Invoked command in '/home/shu/ros2_ws/build/base_demo_cpp' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/shu/ros2_ws/build/base_demo_cpp

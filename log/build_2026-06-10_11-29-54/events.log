@@ -1,0 +1,239 @@
+[0.000000] (-) TimerEvent: {}
+[0.000523] (base_demo_cpp) JobQueued: {'identifier': 'base_demo_cpp', 'dependencies': OrderedDict()}
+[0.000994] (base_demo_cpp) JobStarted: {'identifier': 'base_demo_cpp'}
+[0.009804] (base_demo_cpp) JobProgress: {'identifier': 'base_demo_cpp', 'progress': 'cmake'}
+[0.011671] (base_demo_cpp) JobProgress: {'identifier': 'base_demo_cpp', 'progress': 'build'}
+[0.011718] (base_demo_cpp) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/shu/ros2_ws/build/base_demo_cpp', '--', '-j4', '-l4'], 'cwd': '/home/shu/ros2_ws/build/base_demo_cpp', 'env': OrderedDict({'PYTHON_BASIC_REPL': '1', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'shu', 'SSH_CLIENT': '192.168.5.102 65221 22', 'XDG_SESSION_TYPE': 'tty', 'GIT_ASKPASS': '/home/shu/.vscode-server/cli/servers/Stable-ffa3c3f656c8df32d894e5f4d3673284d424205e/server/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'BROWSER': '/home/shu/.vscode-server/cli/servers/Stable-ffa3c3f656c8df32d894e5f4d3673284d424205e/server/bin/helpers/browser.sh', 'HOME': '/home/shu', 'OLDPWD': '/home/shu', 'TERM_PROGRAM_VERSION': '1.123.1', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-714c76ec-24ec-4885-a41f-621bd5d03c32.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/shu/.vscode-server/cli/servers/Stable-ffa3c3f656c8df32d894e5f4d3673284d424205e/server/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/home/shu/.vscode-server/cli/servers/Stable-ffa3c3f656c8df32d894e5f4d3673284d424205e/server/node', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'BUNDLED_DEBUGPY_PATH': '/home/shu/.vscode-server/extensions/ms-python.debugpy-2026.7.11551009-linux-x64/bundled/libs/debugpy', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'shu', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '171', 'PATH': '/home/shu/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/shu/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/shu/.vscode-server/cli/servers/Stable-ffa3c3f656c8df32d894e5f4d3673284d424205e/server/bin/remote-cli:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/shu/.vscode-server/extensions/ms-python.debugpy-2026.7.11551009-linux-x64/bundled/scripts/noConfigScripts', 'XDG_RUNTIME_DIR': '/run/user/1000', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/home/shu/.vscode-server/extensions/ms-python.debugpy-2026.7.11551009-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-526c0c012ffb6c54.txt', 'LANG': 'zh_CN.UTF-8', 'PYTHONSTARTUP': '/home/shu/.vscode-server/data/User/workspaceStorage/7b45e23037f5eee7c6f6badaaebd103f/ms-python.python/pythonrc.py', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-d38e53c47e.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/shu/ros2_ws/build/base_demo_cpp', 'COPILOT_DEBUG_NONCE': '30628f75d2cfdf8e30afb893bd72e239', 'SSH_CONNECTION': '192.168.5.102 65221 192.168.5.141 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.100123] (-) TimerEvent: {}
+[0.137822] (base_demo_cpp) StdoutLine: {'line': b'[  2%] Built target base_demo_cpp__rosidl_generator_type_description\n'}
+[0.138271] (base_demo_cpp) StdoutLine: {'line': b'[  4%] Built target base_demo_cpp__rs\n'}
+[0.142148] (base_demo_cpp) StdoutLine: {'line': b'[  8%] Built target talker_node\n'}
+[0.142344] (base_demo_cpp) StdoutLine: {'line': b'[ 12%] Built target listener_node\n'}
+[0.161325] (base_demo_cpp) StdoutLine: {'line': b'[ 12%] Built target ament_cmake_python_copy_base_demo_cpp\n'}
+[0.166945] (base_demo_cpp) StdoutLine: {'line': b'[ 16%] Built target base_status_node\n'}
+[0.167654] (base_demo_cpp) StdoutLine: {'line': b'[ 20%] Built target cmd_vel_listener_node\n'}
+[0.168605] (base_demo_cpp) StdoutLine: {'line': b'[ 22%] \x1b[32mBuilding CXX object CMakeFiles/cmd_vel_test_node.dir/src/cmd_vel_test_node.cpp.o\x1b[0m\n'}
+[0.178487] (base_demo_cpp) StdoutLine: {'line': b'[ 24%] Built target base_demo_cpp__cpp\n'}
+[0.190445] (base_demo_cpp) StdoutLine: {'line': b'[ 34%] Built target base_demo_cpp__rosidl_generator_c\n'}
+[0.200794] (-) TimerEvent: {}
+[0.212403] (base_demo_cpp) StdoutLine: {'line': b'[ 40%] Built target base_demo_cpp__rosidl_typesupport_fastrtps_c\n'}
+[0.212583] (base_demo_cpp) StdoutLine: {'line': b'[ 46%] Built target base_demo_cpp__rosidl_typesupport_fastrtps_cpp\n'}
+[0.230279] (base_demo_cpp) StdoutLine: {'line': b'[ 59%] Built target base_demo_cpp__rosidl_typesupport_introspection_c\n'}
+[0.230416] (base_demo_cpp) StdoutLine: {'line': b'[ 59%] Built target base_demo_cpp__rosidl_typesupport_c\n'}
+[0.247543] (base_demo_cpp) StdoutLine: {'line': b'[ 65%] Built target base_demo_cpp__rosidl_typesupport_introspection_cpp\n'}
+[0.249787] (base_demo_cpp) StdoutLine: {'line': b'[ 71%] Built target base_demo_cpp__rosidl_typesupport_cpp\n'}
+[0.265411] (base_demo_cpp) StdoutLine: {'line': b'[ 71%] Built target base_demo_cpp\n'}
+[0.270737] (base_demo_cpp) StdoutLine: {'line': b'[ 75%] Built target base_node\n'}
+[0.284620] (base_demo_cpp) StdoutLine: {'line': b'[ 79%] Built target base_status_listener_node\n'}
+[0.285451] (base_demo_cpp) StdoutLine: {'line': b'[ 81%] Built target base_demo_cpp__py\n'}
+[0.301487] (-) TimerEvent: {}
+[0.301775] (base_demo_cpp) StdoutLine: {'line': b'[ 85%] Built target base_demo_cpp__rosidl_generator_py\n'}
+[0.318773] (base_demo_cpp) StdoutLine: {'line': b'[ 89%] Built target base_demo_cpp_s__rosidl_typesupport_introspection_c\n'}
+[0.319448] (base_demo_cpp) StdoutLine: {'line': b'[ 93%] Built target base_demo_cpp_s__rosidl_typesupport_fastrtps_c\n'}
+[0.322266] (base_demo_cpp) StdoutLine: {'line': b'running egg_info\n'}
+[0.333257] (base_demo_cpp) StdoutLine: {'line': b'writing base_demo_cpp.egg-info/PKG-INFO\n'}
+[0.333712] (base_demo_cpp) StdoutLine: {'line': b'writing dependency_links to base_demo_cpp.egg-info/dependency_links.txt\n'}
+[0.334275] (base_demo_cpp) StdoutLine: {'line': b'[ 97%] Built target base_demo_cpp_s__rosidl_typesupport_c\n'}
+[0.334478] (base_demo_cpp) StdoutLine: {'line': b'writing top-level names to base_demo_cpp.egg-info/top_level.txt\n'}
+[0.363938] (base_demo_cpp) StdoutLine: {'line': b"reading manifest file 'base_demo_cpp.egg-info/SOURCES.txt'\n"}
+[0.364641] (base_demo_cpp) StdoutLine: {'line': b"writing manifest file 'base_demo_cpp.egg-info/SOURCES.txt'\n"}
+[0.383560] (base_demo_cpp) StdoutLine: {'line': b'[ 97%] Built target ament_cmake_python_build_base_demo_cpp_egg\n'}
+[0.402462] (-) TimerEvent: {}
+[0.504805] (-) TimerEvent: {}
+[0.605360] (-) TimerEvent: {}
+[0.707068] (-) TimerEvent: {}
+[0.807339] (-) TimerEvent: {}
+[0.907925] (-) TimerEvent: {}
+[1.009494] (-) TimerEvent: {}
+[1.112098] (-) TimerEvent: {}
+[1.213584] (-) TimerEvent: {}
+[1.315313] (-) TimerEvent: {}
+[1.416956] (-) TimerEvent: {}
+[1.517743] (-) TimerEvent: {}
+[1.618234] (-) TimerEvent: {}
+[1.648284] (base_demo_cpp) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:24\x1b[m\x1b[K,\n'}
+[1.648485] (base_demo_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27\x1b[m\x1b[K,\n'}
+[1.648532] (base_demo_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171\x1b[m\x1b[K,\n'}
+[1.648574] (base_demo_cpp) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/shu/ros2_ws/src/base_demo_cpp/src/cmd_vel_test_node.cpp:22\x1b[m\x1b[K:\n'}
+[1.648613] (base_demo_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shu/ros2_ws/src/base_demo_cpp/src/cmd_vel_test_node.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KCmdVelTestNode::\x1b[01;32m\x1b[KCmdVelTestNode\x1b[m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[1.648654] (base_demo_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shu/ros2_ws/src/base_demo_cpp/src/cmd_vel_test_node.cpp:76:11:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kformat \xe2\x80\x98\x1b[01m\x1b[K%f\x1b[m\x1b[K\xe2\x80\x99 expects argument of type \xe2\x80\x98\x1b[01m\x1b[Kdouble\x1b[m\x1b[K\xe2\x80\x99, but argument 8 has type \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=\x07-Wformat=\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[1.648716] (base_demo_cpp) StderrLine: {'line': b'   76 |           \x1b[01;35m\x1b[K"cmd_vel_test_node started,test_vx=%.2f test_vy=%.2f test_wz=%.2f publish_period_ms=%.2f"\x1b[m\x1b[K,\n'}
+[1.648757] (base_demo_cpp) StderrLine: {'line': b'      |           \x1b[01;35m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.648806] (base_demo_cpp) StderrLine: {'line': b'......\n'}
+[1.648841] (base_demo_cpp) StderrLine: {'line': b'   80 |           \x1b[32m\x1b[Kpublish_period_ms_\x1b[m\x1b[K\n'}
+[1.648873] (base_demo_cpp) StderrLine: {'line': b'      |           \x1b[32m\x1b[K~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.648901] (base_demo_cpp) StderrLine: {'line': b'      |           \x1b[32m\x1b[K|\x1b[m\x1b[K\n'}
+[1.648930] (base_demo_cpp) StderrLine: {'line': b'      |           \x1b[32m\x1b[Kint\x1b[m\x1b[K\n'}
+[1.648959] (base_demo_cpp) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shu/ros2_ws/src/base_demo_cpp/src/cmd_vel_test_node.cpp:76:98:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kformat string is defined here\n'}
+[1.648988] (base_demo_cpp) StderrLine: {'line': b'   76 |           "cmd_vel_test_node started,test_vx=%.2f test_vy=%.2f test_wz=%.2f publish_period_ms=\x1b[01;36m\x1b[K%.2f\x1b[m\x1b[K",\n'}
+[1.649020] (base_demo_cpp) StderrLine: {'line': b'      |                                                                                               \x1b[01;36m\x1b[K~~~^\x1b[m\x1b[K\n'}
+[1.649050] (base_demo_cpp) StderrLine: {'line': b'      |                                                                                                  \x1b[01;36m\x1b[K|\x1b[m\x1b[K\n'}
+[1.649083] (base_demo_cpp) StderrLine: {'line': b'      |                                                                                                  \x1b[01;36m\x1b[Kdouble\x1b[m\x1b[K\n'}
+[1.649113] (base_demo_cpp) StderrLine: {'line': b'      |                                                                                               \x1b[32m\x1b[K%.2d\x1b[m\x1b[K\n'}
+[1.719481] (-) TimerEvent: {}
+[1.820401] (-) TimerEvent: {}
+[1.923251] (-) TimerEvent: {}
+[2.024048] (-) TimerEvent: {}
+[2.124409] (-) TimerEvent: {}
+[2.224866] (-) TimerEvent: {}
+[2.325163] (-) TimerEvent: {}
+[2.426367] (-) TimerEvent: {}
+[2.526830] (-) TimerEvent: {}
+[2.627433] (-) TimerEvent: {}
+[2.727747] (-) TimerEvent: {}
+[2.828103] (-) TimerEvent: {}
+[2.928872] (-) TimerEvent: {}
+[3.029413] (-) TimerEvent: {}
+[3.130106] (-) TimerEvent: {}
+[3.231088] (-) TimerEvent: {}
+[3.332250] (-) TimerEvent: {}
+[3.402726] (base_demo_cpp) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable cmd_vel_test_node\x1b[0m\n'}
+[3.432519] (-) TimerEvent: {}
+[3.533186] (-) TimerEvent: {}
+[3.611471] (base_demo_cpp) StdoutLine: {'line': b'[100%] Built target cmd_vel_test_node\n'}
+[3.620680] (base_demo_cpp) CommandEnded: {'returncode': 0}
+[3.622069] (base_demo_cpp) JobProgress: {'identifier': 'base_demo_cpp', 'progress': 'install'}
+[3.628282] (base_demo_cpp) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/shu/ros2_ws/build/base_demo_cpp'], 'cwd': '/home/shu/ros2_ws/build/base_demo_cpp', 'env': OrderedDict({'PYTHON_BASIC_REPL': '1', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'shu', 'SSH_CLIENT': '192.168.5.102 65221 22', 'XDG_SESSION_TYPE': 'tty', 'GIT_ASKPASS': '/home/shu/.vscode-server/cli/servers/Stable-ffa3c3f656c8df32d894e5f4d3673284d424205e/server/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'BROWSER': '/home/shu/.vscode-server/cli/servers/Stable-ffa3c3f656c8df32d894e5f4d3673284d424205e/server/bin/helpers/browser.sh', 'HOME': '/home/shu', 'OLDPWD': '/home/shu', 'TERM_PROGRAM_VERSION': '1.123.1', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-714c76ec-24ec-4885-a41f-621bd5d03c32.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/shu/.vscode-server/cli/servers/Stable-ffa3c3f656c8df32d894e5f4d3673284d424205e/server/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/home/shu/.vscode-server/cli/servers/Stable-ffa3c3f656c8df32d894e5f4d3673284d424205e/server/node', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'BUNDLED_DEBUGPY_PATH': '/home/shu/.vscode-server/extensions/ms-python.debugpy-2026.7.11551009-linux-x64/bundled/libs/debugpy', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'shu', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '171', 'PATH': '/home/shu/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/shu/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/shu/.vscode-server/cli/servers/Stable-ffa3c3f656c8df32d894e5f4d3673284d424205e/server/bin/remote-cli:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/shu/.vscode-server/extensions/ms-python.debugpy-2026.7.11551009-linux-x64/bundled/scripts/noConfigScripts', 'XDG_RUNTIME_DIR': '/run/user/1000', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/home/shu/.vscode-server/extensions/ms-python.debugpy-2026.7.11551009-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-526c0c012ffb6c54.txt', 'LANG': 'zh_CN.UTF-8', 'PYTHONSTARTUP': '/home/shu/.vscode-server/data/User/workspaceStorage/7b45e23037f5eee7c6f6badaaebd103f/ms-python.python/pythonrc.py', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-d38e53c47e.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/shu/ros2_ws/build/base_demo_cpp', 'COPILOT_DEBUG_NONCE': '30628f75d2cfdf8e30afb893bd72e239', 'SSH_CONNECTION': '192.168.5.102 65221 192.168.5.141 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[3.633800] (-) TimerEvent: {}
+[3.634369] (base_demo_cpp) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[3.634508] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/ament_index/resource_index/rosidl_interfaces/base_demo_cpp\n'}
+[3.634715] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/msg/BaseStatus.json\n'}
+[3.634977] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp\n'}
+[3.635113] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg\n'}
+[3.635166] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail\n'}
+[3.635203] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/base_status__type_support.h\n'}
+[3.635237] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/base_status__functions.h\n'}
+[3.635326] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/base_status__description.c\n'}
+[3.635415] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/base_status__functions.c\n'}
+[3.635451] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/base_status__struct.h\n'}
+[3.635485] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/base_status__type_support.c\n'}
+[3.635517] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/rosidl_generator_c__visibility_control.h\n'}
+[3.635549] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/base_status.h\n'}
+[3.635849] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/environment/library_path.sh\n'}
+[3.635931] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/environment/library_path.dsv\n'}
+[3.636327] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/libbase_demo_cpp__rosidl_generator_c.so\n'}
+[3.636465] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp\n'}
+[3.636566] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg\n'}
+[3.636607] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail\n'}
+[3.636641] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/base_status__rosidl_typesupport_fastrtps_c.h\n'}
+[3.636674] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[3.636954] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/libbase_demo_cpp__rosidl_typesupport_fastrtps_c.so\n'}
+[3.637126] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp\n'}
+[3.637191] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg\n'}
+[3.637229] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail\n'}
+[3.637263] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/base_status__type_support.hpp\n'}
+[3.637301] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/base_status__builder.hpp\n'}
+[3.637336] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/base_status__struct.hpp\n'}
+[3.637390] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/base_status__traits.hpp\n'}
+[3.637426] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[3.637458] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/base_status.hpp\n'}
+[3.637493] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp\n'}
+[3.637524] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg\n'}
+[3.637555] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail\n'}
+[3.637586] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/dds_fastrtps\n'}
+[3.637616] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/base_status__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[3.637645] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[3.637776] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/libbase_demo_cpp__rosidl_typesupport_fastrtps_cpp.so\n'}
+[3.637882] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp\n'}
+[3.637952] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg\n'}
+[3.638004] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail\n'}
+[3.638090] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/base_status__rosidl_typesupport_introspection_c.h\n'}
+[3.638125] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/base_status__type_support.c\n'}
+[3.638159] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[3.638393] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/libbase_demo_cpp__rosidl_typesupport_introspection_c.so\n'}
+[3.638709] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/libbase_demo_cpp__rosidl_typesupport_c.so\n'}
+[3.638879] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp\n'}
+[3.638937] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg\n'}
+[3.638974] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail\n'}
+[3.639006] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/base_status__rosidl_typesupport_introspection_cpp.hpp\n'}
+[3.639039] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/include/base_demo_cpp/base_demo_cpp/msg/detail/base_status__type_support.cpp\n'}
+[3.639252] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/libbase_demo_cpp__rosidl_typesupport_introspection_cpp.so\n'}
+[3.639769] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/libbase_demo_cpp__rosidl_typesupport_cpp.so\n'}
+[3.639859] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/environment/pythonpath.sh\n'}
+[3.639961] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/environment/pythonpath.dsv\n'}
+[3.640001] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp-0.0.0-py3.12.egg-info\n'}
+[3.640098] (base_demo_cpp) StdoutLine: {'line': b'-- Installing: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp-0.0.0-py3.12.egg-info/PKG-INFO\n'}
+[3.640651] (base_demo_cpp) StdoutLine: {'line': b'-- Installing: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp-0.0.0-py3.12.egg-info/SOURCES.txt\n'}
+[3.640873] (base_demo_cpp) StdoutLine: {'line': b'-- Installing: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp-0.0.0-py3.12.egg-info/dependency_links.txt\n'}
+[3.641277] (base_demo_cpp) StdoutLine: {'line': b'-- Installing: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp-0.0.0-py3.12.egg-info/top_level.txt\n'}
+[3.641418] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp\n'}
+[3.641511] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp/_base_demo_cpp_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[3.641548] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp/base_demo_cpp_s__rosidl_typesupport_introspection_c.so\n'}
+[3.641583] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp/_base_demo_cpp_s.ep.rosidl_typesupport_c.c\n'}
+[3.641639] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp/base_demo_cpp_s__rosidl_typesupport_fastrtps_c.so\n'}
+[3.641676] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp/__init__.py\n'}
+[3.641708] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp/_base_demo_cpp_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[3.641739] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp/base_demo_cpp_s__rosidl_typesupport_c.so\n'}
+[3.641769] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp/msg\n'}
+[3.641801] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp/msg/__init__.py\n'}
+[3.641831] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp/msg/_base_status.py\n'}
+[3.641860] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp/msg/_base_status_s.c\n'}
+[3.669009] (base_demo_cpp) StdoutLine: {'line': b"Listing '/home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp'...\n"}
+[3.669144] (base_demo_cpp) StdoutLine: {'line': b"Listing '/home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp/msg'...\n"}
+[3.673371] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp/base_demo_cpp_s__rosidl_typesupport_fastrtps_c.so\n'}
+[3.673874] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp/base_demo_cpp_s__rosidl_typesupport_introspection_c.so\n'}
+[3.674291] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/python3.12/site-packages/base_demo_cpp/base_demo_cpp_s__rosidl_typesupport_c.so\n'}
+[3.674851] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/libbase_demo_cpp__rosidl_generator_py.so\n'}
+[3.675002] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/ament_index/resource_index/rust_packages/base_demo_cpp\n'}
+[3.675065] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/rust\n'}
+[3.675103] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/rust/src\n'}
+[3.675176] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/rust/src/lib.rs\n'}
+[3.675212] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/rust/src/msg.rs\n'}
+[3.675652] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/rust/src/msg\n'}
+[3.675793] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/rust/src/msg/rmw.rs\n'}
+[3.675848] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/rust/build.rs\n'}
+[3.675883] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/rust/Cargo.toml\n'}
+[3.675940] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/msg/BaseStatus.idl\n'}
+[3.675976] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/msg/BaseStatus.msg\n'}
+[3.676784] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/base_demo_cpp/talker_node\n'}
+[3.678141] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/base_demo_cpp/listener_node\n'}
+[3.679090] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/base_demo_cpp/base_status_node\n'}
+[3.680271] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/base_demo_cpp/cmd_vel_listener_node\n'}
+[3.681643] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/base_demo_cpp/base_node\n'}
+[3.683037] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/lib/base_demo_cpp/base_status_listener_node\n'}
+[3.683994] (base_demo_cpp) StdoutLine: {'line': b'-- Installing: /home/shu/ros2_ws/install/base_demo_cpp/lib/base_demo_cpp/cmd_vel_test_node\n'}
+[3.684691] (base_demo_cpp) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/shu/ros2_ws/install/base_demo_cpp/lib/base_demo_cpp/cmd_vel_test_node" to ""\n'}
+[3.684806] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/launch\n'}
+[3.684847] (base_demo_cpp) StdoutLine: {'line': b'-- Installing: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/launch/base_system.launch.py\n'}
+[3.684975] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/ament_index/resource_index/package_run_dependencies/base_demo_cpp\n'}
+[3.685079] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/ament_index/resource_index/parent_prefix_path/base_demo_cpp\n'}
+[3.685325] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/environment/ament_prefix_path.sh\n'}
+[3.685421] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/environment/ament_prefix_path.dsv\n'}
+[3.685522] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/environment/path.sh\n'}
+[3.685558] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/environment/path.dsv\n'}
+[3.685596] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/local_setup.bash\n'}
+[3.685628] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/local_setup.sh\n'}
+[3.685659] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/local_setup.zsh\n'}
+[3.685703] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/local_setup.dsv\n'}
+[3.685737] (base_demo_cpp) StdoutLine: {'line': b'-- Installing: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/package.dsv\n'}
+[3.685973] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/ament_index/resource_index/packages/base_demo_cpp\n'}
+[3.686559] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/export_base_demo_cpp__rosidl_generator_cExport.cmake\n'}
+[3.686653] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/export_base_demo_cpp__rosidl_generator_cExport-noconfig.cmake\n'}
+[3.687208] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/export_base_demo_cpp__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[3.687299] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/export_base_demo_cpp__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[3.687699] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/export_base_demo_cpp__rosidl_generator_cppExport.cmake\n'}
+[3.688221] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/export_base_demo_cpp__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[3.688322] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/export_base_demo_cpp__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[3.688814] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/base_demo_cpp__rosidl_typesupport_introspection_cExport.cmake\n'}
+[3.688879] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/base_demo_cpp__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[3.689227] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/base_demo_cpp__rosidl_typesupport_cExport.cmake\n'}
+[3.689309] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/base_demo_cpp__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[3.689690] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/base_demo_cpp__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[3.689766] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/base_demo_cpp__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[3.690132] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/base_demo_cpp__rosidl_typesupport_cppExport.cmake\n'}
+[3.690248] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/base_demo_cpp__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[3.690800] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/export_base_demo_cpp__rosidl_generator_pyExport.cmake\n'}
+[3.690915] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/export_base_demo_cpp__rosidl_generator_pyExport-noconfig.cmake\n'}
+[3.691025] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/rosidl_cmake-extras.cmake\n'}
+[3.691096] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[3.691136] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[3.691171] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[3.691207] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[3.691240] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[3.691272] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[3.691303] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/base_demo_cppConfig.cmake\n'}
+[3.691332] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/cmake/base_demo_cppConfig-version.cmake\n'}
+[3.691362] (base_demo_cpp) StdoutLine: {'line': b'-- Up-to-date: /home/shu/ros2_ws/install/base_demo_cpp/share/base_demo_cpp/package.xml\n'}
+[3.693422] (base_demo_cpp) CommandEnded: {'returncode': 0}
+[3.713488] (base_demo_cpp) JobEnded: {'identifier': 'base_demo_cpp', 'rc': 0}
+[3.714239] (-) EventReactorShutdown: {}
