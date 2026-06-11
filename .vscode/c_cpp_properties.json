@@ -3,7 +3,9 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/**",
+                "${workspaceFolder}/src/base_demo_cpp/include/**",
+                "${workspaceFolder}/install/base_demo_cpp/include/base_demo_cpp/**",
+                "${workspaceFolder}/build/base_demo_cpp/rosidl_generator_cpp/**",
                 "/opt/ros/jazzy/include/**"
             ],
             "defines": [],

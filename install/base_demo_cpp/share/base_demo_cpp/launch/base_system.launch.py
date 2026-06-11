@@ -51,7 +51,9 @@ def generate_launch_description():
         name='base_node',
         output='screen',
         parameters=[
-            {'cmd_timeout_ms':cmd_timeout_ms}
+            {'cmd_timeout_ms':cmd_timeout_ms,
+             "server_ip":"127.0.0.1",
+             "server_port":17000}
         ]
         )
 
