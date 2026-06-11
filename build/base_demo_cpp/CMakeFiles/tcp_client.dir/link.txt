@@ -1,0 +1,2 @@
+/usr/bin/ar qc libtcp_client.a CMakeFiles/tcp_client.dir/src/tcp_client.cpp.o
+/usr/bin/ranlib libtcp_client.a
