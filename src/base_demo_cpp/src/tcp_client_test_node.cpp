@@ -2,7 +2,7 @@
  * @Author: 树 shuxianshengio@126.com
  * @Date: 2026-06-10 18:12:09
  * @LastEditors: 树 shuxianshengio@126.com
- * @LastEditTime: 2026-06-11 14:32:00
+ * @LastEditTime: 2026-06-11 15:11:26
  * @FilePath: /shu/ros2_ws/src/base_demo_cpp/src/tcp_client_test_node.cpp
  * @Description: 编写一个ROS2的一个tcp_client的测试阶段
  */
@@ -114,7 +114,7 @@ private:
     // 注意：
     // 这里应该把接收结果保存到 reply 中，
     // 不是保存到 cmd 中。
-    if (!client.receiveLine(cmd))
+    if (!client.receiveLine(reply))
     {
       RCLCPP_ERROR(
           this->get_logger(),
@@ -126,7 +126,7 @@ private:
     // RX 表示 receive，即接收方向的数据。
     RCLCPP_INFO(
         this->get_logger(),
-        "TX:%s",
+        "RX:%s",
         reply.c_str());
   }
 

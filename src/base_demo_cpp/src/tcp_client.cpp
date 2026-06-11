@@ -2,7 +2,7 @@
  * @Author: 树 shuxianshengio@126.com
  * @Date: 2026-06-10 15:06:48
  * @LastEditors: 树 shuxianshengio@126.com
- * @LastEditTime: 2026-06-10 15:55:52
+ * @LastEditTime: 2026-06-11 15:08:49
  * @FilePath: /shu/ros2_ws/src/base_demo_cpp/src/to_client.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -37,7 +37,7 @@ bool TcpClient::connectTo(const std::string host, int port)
   server_addr.sin_family = AF_INET;
   server_addr.sin_port = htons(port);
 
-  if (inet_pton(AF_INET, host.c_str(), &server_addr.sin_addr))
+  if (inet_pton(AF_INET, host.c_str(), &server_addr.sin_addr) <= 0)
   {
     closeSocket();
     return false;
@@ -70,7 +70,7 @@ bool TcpClient::sendLine(const std::string &line)
   while (total_sent < total_szie)
   {
     ssize_t sent = send(sock_fd_, buffer + total_sent, total_szie - total_sent, 0);
-    if (sent < 0)
+    if (sent <= 0)
     {
       closeSocket();
       return false;
@@ -92,7 +92,7 @@ bool TcpClient::receiveLine(std::string &line)
   while (true)
   {
     ssize_t n = recv(sock_fd_, &ch, 1, 0);
-    if (n < 0)
+    if (n <= 0)
     {
       closeSocket();
       return false;
@@ -108,13 +108,13 @@ bool TcpClient::receiveLine(std::string &line)
 }
 void TcpClient::closeSocket()
 {
-  if (sock_fd_ > 0)
+  if (sock_fd_ >= 0)
   {
     close(sock_fd_);
     sock_fd_ = -1;
   }
 }
-bool TcpClient::isConnented() const
+bool TcpClient::isConnected() const
 {
-  return sock_fd_ > 0;
+  return sock_fd_ >= 0;
 }
