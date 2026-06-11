@@ -33,6 +33,15 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 rosidl_get_typesupport_target(cpp_typesupport_target
   ${PROJECT_NAME} rosidl_typesupport_cpp)
 
+add_library(tcp_client
+  src/tcp_client.cpp
+)
+
+target_include_directories(tcp_client PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>
+)
+
 add_executable(base_status_node src/base_status_node.cpp)
 ament_target_dependencies(base_status_node rclcpp std_msgs)
 
@@ -43,8 +52,10 @@ add_executable(base_node src/base_node.cpp)
 ament_target_dependencies(base_node rclcpp geometry_msgs)
 
 target_link_libraries(base_node
+  tcp_client
   "${cpp_typesupport_target}"
 )
+
 add_executable(cmd_vel_test_node src/cmd_vel_test_node.cpp)
 ament_target_dependencies(cmd_vel_test_node rclcpp geometry_msgs)
 
@@ -55,6 +66,17 @@ target_link_libraries(base_status_listener_node
   "${cpp_typesupport_target}"
 )
 
+add_executable(tcp_client_test_node src/tcp_client_test_node.cpp)
+ament_target_dependencies(tcp_client_test_node rclcpp)
+
+target_link_libraries(tcp_client_test_node
+  tcp_client
+)
+add_library(tcp_client src/tcp_client)
+target_include_directories(tcp_client PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>
+)
 # 安装可执行文件到 install/base_demo_cpp/lib/base_demo_cpp/
 # 这样 ros2 run base_demo_cpp talker_node / listener_node 才能找到
 install(TARGETS
@@ -65,6 +87,7 @@ install(TARGETS
   base_node
   base_status_listener_node
   cmd_vel_test_node
+  tcp_client_test_node
   DESTINATION lib/${PROJECT_NAME}
 )
 

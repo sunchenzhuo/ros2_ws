@@ -1,7 +1,0 @@
-{
-  "package_name": "base_demo_cpp",
-  "output_dir": "/home/shu/ros2_ws/build/base_demo_cpp/rosidl_generator_type_description/base_demo_cpp",
-  "idl_tuples": [
-    "/home/shu/ros2_ws/build/base_demo_cpp/rosidl_adapter/base_demo_cpp:msg/BaseStatus.idl"
-  ]
-}
