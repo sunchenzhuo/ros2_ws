@@ -108,6 +108,19 @@ private:
   std::string server_ip_ = "127.0.0.1";
   int server_port_ = 17000;
 
+  std::string errorCodeToString(int err_code)
+  {
+    if (err_code == 0)
+    {
+      return "OK";
+    }
+    if (err_code == 1)
+    {
+      return "LOW_BATTERY_VOLTAGE";
+    }
+    return "UNKNOW";
+  }
+
 private:
   /**
    * @brief /cmd_vel 速度指令回调函数。
@@ -269,16 +282,25 @@ private:
       err = "LOW_BATTERY";
     }
 
+    // 使用字符串输出流拼接待发送的底盘控制命令
+    // std::fixed + std::setprecision(2) 表示浮点数固定保留 2 位小数
     std::ostringstream cmd_oss;
     cmd_oss << std::fixed << std::setprecision(2);
+
+    // 组装 CMD 控制报文
+    // 报文格式：CMD seq vx vy wz
+    // 示例：CMD 1 0.10 0.00 0.20
     cmd_oss << "CMD " << seq_
             << " " << current_vx
             << " " << current_vy
             << " " << current_wz;
 
+    // 将拼接完成的命令转换为字符串，准备通过 TCP 发送
     std::string cmd = cmd_oss.str();
 
+    // 创建 TCP 客户端对象，用于连接 QEMU 仿真端
     TcpClient client;
+    // 连接 QEMU 服务端，如果连接失败则打印错误日志
     if (!client.connectTo(server_ip_, server_port_))
     {
       RCLCPP_ERROR(
@@ -289,10 +311,12 @@ private:
     }
     else
     {
+      // 连接成功后，打印即将发送的 CMD 控制命令
       RCLCPP_INFO(
           this->get_logger(),
           "TX:%s",
           cmd.c_str());
+      // 通过 TCP 向 QEMU 发送一行 CMD 控制命令
       if (!client.sendLine(cmd))
       {
         RCLCPP_ERROR(
@@ -301,6 +325,7 @@ private:
       }
       else
       {
+        // CMD 发送成功后，等待接收 QEMU 返回的 STA 状态报文
         std::string reply;
         if (!client.receiveLine(reply))
         {
@@ -310,16 +335,23 @@ private:
         }
         else
         {
+          // 成功接收到 STA 状态报文，打印原始返回内容
           RCLCPP_INFO(
               this->get_logger(),
               "RX:%s",
               reply.c_str());
+
+          // 定义底盘状态结构体，用于保存解析后的状态数据
           ChassisStatus chassis_status;
+
+          // 解析 STA 状态报文
+          // 预期格式：STA seq vx vy wz battery_voltage err_code
           if (parseSta(reply, chassis_status))
           {
+            // 解析成功后，打印底盘状态信息
             RCLCPP_INFO(
                 this->get_logger(),
-                "parsed STA seq=%d, vx=%.2f, vy=%.2f, wz=%.2f batter_voltage=%.2f, err_code=%d",
+                "parsed STA seq=%d, vx=%.2f, vy=%.2f, wz=%.2f battery_voltage=%.2f, err_code=%d",
                 chassis_status.seq,
                 chassis_status.vx,
                 chassis_status.vy,
@@ -329,6 +361,7 @@ private:
           }
           else
           {
+            // 解析失败时，打印原始 STA 报文，方便排查协议格式问题
             RCLCPP_ERROR(
                 this->get_logger(),
                 "parsed STA failed: %s",
