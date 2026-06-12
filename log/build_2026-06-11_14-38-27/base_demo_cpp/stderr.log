@@ -1,7 +1,0 @@
-[31mCMake Error at CMakeLists.txt:75 (add_library):
-  add_library cannot create target "tcp_client" because another target with
-  the same name already exists.  The existing target is a shared library
-  created in source directory "/home/shu/ros2_ws/src/base_demo_cpp".  See
-  documentation for policy CMP0002 for more details.
-
-[0m

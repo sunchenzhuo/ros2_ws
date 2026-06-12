@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DROS_PACKAGE_NAME=\"base_demo_cpp\"
 
-CXX_INCLUDES = -I/home/shu/ros2_ws/src/base_demo_cpp/include
+CXX_INCLUDES = -I/home/shu/agv-robot-system/ros2_ws/src/base_demo_cpp/include
 
 CXX_FLAGS = -Wall -Wextra -Wpedantic
 

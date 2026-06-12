@@ -282,6 +282,13 @@ private:
       err = "LOW_BATTERY";
     }
 
+    int status_seq = seq_;
+    double status_vx = current_vx;
+    double status_vy = current_vy;
+    double status_wz = current_wz;
+    double status_battery_voltage = battery_voltage;
+    std::string status_err = err;
+
     // 使用字符串输出流拼接待发送的底盘控制命令
     // std::fixed + std::setprecision(2) 表示浮点数固定保留 2 位小数
     std::ostringstream cmd_oss;
@@ -343,11 +350,13 @@ private:
 
           // 定义底盘状态结构体，用于保存解析后的状态数据
           ChassisStatus chassis_status;
+          bool has_chassis_status = false;
 
           // 解析 STA 状态报文
           // 预期格式：STA seq vx vy wz battery_voltage err_code
           if (parseSta(reply, chassis_status))
           {
+            has_chassis_status = true;
             // 解析成功后，打印底盘状态信息
             RCLCPP_INFO(
                 this->get_logger(),

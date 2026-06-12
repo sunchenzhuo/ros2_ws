@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = -DROS_PACKAGE_NAME=\"base_demo_cpp\" -Dbase_demo_cpp_s__rosidl_typesupport_c_EXPORTS
 
-C_INCLUDES = -I/home/shu/ros2_ws/build/base_demo_cpp/rosidl_generator_c -I/home/shu/ros2_ws/build/base_demo_cpp/rosidl_generator_py -I/opt/ros/jazzy/include/rmw -isystem /usr/include/python3.12 -isystem /opt/ros/jazzy/include/rosidl_runtime_c -isystem /opt/ros/jazzy/include/rcutils -isystem /opt/ros/jazzy/include/rosidl_typesupport_interface -isystem /opt/ros/jazzy/include/rosidl_typesupport_c -isystem /opt/ros/jazzy/include/rosidl_dynamic_typesupport
+C_INCLUDES = -I/home/shu/agv-robot-system/ros2_ws/build/base_demo_cpp/rosidl_generator_c -I/home/shu/agv-robot-system/ros2_ws/build/base_demo_cpp/rosidl_generator_py -I/opt/ros/jazzy/include/rmw -isystem /usr/include/python3.12 -isystem /opt/ros/jazzy/include/geometry_msgs -isystem /opt/ros/jazzy/include/std_msgs -isystem /opt/ros/jazzy/include/builtin_interfaces -isystem /opt/ros/jazzy/include/rosidl_runtime_c -isystem /opt/ros/jazzy/include/rcutils -isystem /opt/ros/jazzy/include/rosidl_typesupport_interface -isystem /opt/ros/jazzy/include/rosidl_typesupport_c -isystem /opt/ros/jazzy/include/rosidl_dynamic_typesupport
 
 C_FLAGS = -fPIC -Wall -Wextra
 

@@ -12,10 +12,13 @@ find_package(rosidl_default_generators REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/BaseStatus.msg"
+  DEPENDENCIES geometry_msgs
 )
 
 rosidl_get_typesupport_target(cpp_typesupport_target
-  ${PROJECT_NAME} rosidl_typesupport_cpp)
+  ${PROJECT_NAME}
+  rosidl_typesupport_cpp
+)
 
 add_library(tcp_client STATIC
   src/tcp_client.cpp

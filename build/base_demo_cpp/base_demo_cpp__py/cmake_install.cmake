@@ -1,8 +1,8 @@
-# Install script for directory: /home/shu/ros2_ws/build/base_demo_cpp/base_demo_cpp__py
+# Install script for directory: /home/shu/agv-robot-system/ros2_ws/build/base_demo_cpp/base_demo_cpp__py
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/shu/ros2_ws/install/base_demo_cpp")
+  set(CMAKE_INSTALL_PREFIX "/home/shu/agv-robot-system/ros2_ws/install/base_demo_cpp")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

@@ -4,8 +4,8 @@
 
 #include <string.h>
 
-#include "rosidl_typesupport_interface/macros.h"
 #include "base_demo_cpp/msg/detail/base_status__struct.h"
+#include "rosidl_typesupport_interface/macros.h"
 #include "base_demo_cpp/msg/detail/base_status__functions.h"
 #include "base_demo_cpp/msg/detail/base_status__type_support.h"
 

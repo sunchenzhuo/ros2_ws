@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = -DROSIDL_TYPESUPPORT_INTROSPECTION_C_BUILDING_DLL_base_demo_cpp -DROS_PACKAGE_NAME=\"base_demo_cpp\"
 
-C_INCLUDES = -I/home/shu/ros2_ws/build/base_demo_cpp/rosidl_typesupport_introspection_c -I/home/shu/ros2_ws/build/base_demo_cpp/rosidl_generator_c -isystem /opt/ros/jazzy/include/rosidl_runtime_c -isystem /opt/ros/jazzy/include/rcutils -isystem /opt/ros/jazzy/include/rosidl_typesupport_interface -isystem /opt/ros/jazzy/include/rosidl_typesupport_introspection_c
+C_INCLUDES = -I/home/shu/agv-robot-system/ros2_ws/build/base_demo_cpp/rosidl_typesupport_introspection_c -I/home/shu/agv-robot-system/ros2_ws/build/base_demo_cpp/rosidl_generator_c -isystem /opt/ros/jazzy/include/geometry_msgs -isystem /opt/ros/jazzy/include/std_msgs -isystem /opt/ros/jazzy/include/builtin_interfaces -isystem /opt/ros/jazzy/include/rosidl_runtime_c -isystem /opt/ros/jazzy/include/rcutils -isystem /opt/ros/jazzy/include/rosidl_typesupport_interface -isystem /opt/ros/jazzy/include/rosidl_typesupport_introspection_c
 
 C_FLAGS = -std=gnu11 -fPIC -Wall
 

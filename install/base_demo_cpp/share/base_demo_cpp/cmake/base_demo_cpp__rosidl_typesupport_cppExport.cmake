@@ -59,7 +59,7 @@ endif()
 add_library(base_demo_cpp::base_demo_cpp__rosidl_typesupport_cpp SHARED IMPORTED)
 
 set_target_properties(base_demo_cpp::base_demo_cpp__rosidl_typesupport_cpp PROPERTIES
-  INTERFACE_LINK_LIBRARIES "base_demo_cpp::base_demo_cpp__rosidl_generator_c;base_demo_cpp::base_demo_cpp__rosidl_generator_cpp"
+  INTERFACE_LINK_LIBRARIES "base_demo_cpp::base_demo_cpp__rosidl_generator_c;base_demo_cpp::base_demo_cpp__rosidl_generator_cpp;geometry_msgs::geometry_msgs__rosidl_typesupport_cpp;std_msgs::std_msgs__rosidl_typesupport_cpp"
 )
 
 if(CMAKE_VERSION VERSION_LESS 2.8.12)
