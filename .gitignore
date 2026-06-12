@@ -1,0 +1,42 @@
+# ROS2 build outputs
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+
+# Root build outputs
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.pyc
+
+# C/C++ build outputs
+*.o
+*.so
+*.a
+*.out
+*.elf
+*.bin
+*.hex
+*.map
+*.lst
+*.axf
+
+# Embedded IDE outputs
+Objects/
+Listings/
+Debug/
+Release/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+
+# Vim swap files
+*.swp
+*.swo
