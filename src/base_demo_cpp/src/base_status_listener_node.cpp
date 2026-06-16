@@ -1,3 +1,11 @@
+/*
+ * @Author: 树 shuxianshengio@126.com
+ * @Date: 2026-06-09 10:06:41
+ * @LastEditors: 树 shuxianshengio@126.com
+ * @LastEditTime: 2026-06-15 13:44:51
+ * @FilePath: /shu/agv-robot-system/ros2_ws/src/base_demo_cpp/src/base_status_listener_node.cpp
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 /**
  * @文件路径         : /shu/ros2_ws/src/base_demo_cpp/src/base_status_listener_node.cpp
  * @作者           : 树
@@ -17,48 +25,68 @@
 class BaseStatusListenerNode : public rclcpp::Node
 {
 private:
-    rclcpp::Subscription<base_demo_cpp::msg::BaseStatus>::SharedPtr sub_;
+  rclcpp::Subscription<base_demo_cpp::msg::BaseStatus>::SharedPtr sub_;
+  std::string status_reliability_ = "reliable";
+  int status_depth_ = 10;
 
 private:
-    void onStatus(const base_demo_cpp::msg::BaseStatus::SharedPtr msg)
+  void onStatus(const base_demo_cpp::msg::BaseStatus::SharedPtr msg)
+  {
+    RCLCPP_INFO(
+        this->get_logger(),
+        "status seq:%d vx=%.2f vy=%.2f wz=%.2f battery_voltage=%.2f err=%s cmd_timeout=%d",
+        msg->seq,
+        msg->vx,
+        msg->vy,
+        msg->wz,
+        msg->battery_voltage,
+        msg->err.c_str(),
+        msg->cmd_timeout ? 1 : 0);
+
+    if (msg->cmd_timeout)
     {
-        RCLCPP_INFO(
-            this->get_logger(),
-            "status seq:%d vx=%.2f vy=%.2f wz=%.2f battery_voltage=%.2f err=%s cmd_timeout=%d",
-            msg->seq,
-            msg->vx,
-            msg->vy,
-            msg->wz,
-            msg->battery_voltage,
-            msg->err.c_str(),
-            msg->cmd_timeout ? 1 : 0);
-
-        if (msg->cmd_timeout)
-        {
-            RCLCPP_WARN(this->get_logger(), "base command timeout, chassis should be stopped");
-        }
-
-        if (msg->battery_voltage < 11.0)
-        {
-            RCLCPP_WARN(this->get_logger(), "batter voltage low:%.2f", msg->battery_voltage);
-        }
+      RCLCPP_WARN(this->get_logger(), "base command timeout, chassis should be stopped");
     }
+
+    if (msg->battery_voltage < 11.0)
+    {
+      RCLCPP_WARN(this->get_logger(), "batter voltage low:%.2f", msg->battery_voltage);
+    }
+  }
 
 public:
-    BaseStatusListenerNode() : Node("base_status_listener_node")
-    {
-        sub_ = this->create_subscription<base_demo_cpp::msg::BaseStatus>(
-            "base/status",
-            10,
-            std::bind(&BaseStatusListenerNode::onStatus, this, std::placeholders::_1));
+  BaseStatusListenerNode() : Node("base_status_listener_node")
+  {
+    this->declare_parameter<std::string>("status_reliability", "reliable");
+    this->declare_parameter<int>("status_depth", 10);
 
-        RCLCPP_INFO(this->get_logger(), "base_status_listener_node started");
+    status_reliability_ = this->get_parameter("status_reliability").as_string();
+    status_depth_ = this->get_parameter("status_depth").as_int();
+
+    rclcpp::QoS status_qos = (status_depth_);
+    if (status_reliability_ == "best_effor")
+    {
+      status_qos.best_effort();
     }
+    else
+    {
+      status_qos.reliability();
+    }
+    sub_ = this->create_subscription<base_demo_cpp::msg::BaseStatus>(
+        "base/status",
+        10,
+        std::bind(&BaseStatusListenerNode::onStatus, this, std::placeholders::_1));
+
+    RCLCPP_INFO(this->get_logger(),
+                "status subscriber qos reliability=%s depth=%d",
+                status_reliability_.c_str(),
+                status_depth_);
+  }
 };
 int main(int argc, char **argv)
 {
-    rclcpp::init(argc, argv);
-    rclcpp::spin(std::make_shared<BaseStatusListenerNode>());
-    rclcpp::shutdown();
-    return 0;
+  rclcpp::init(argc, argv);
+  rclcpp::spin(std::make_shared<BaseStatusListenerNode>());
+  rclcpp::shutdown();
+  return 0;
 }

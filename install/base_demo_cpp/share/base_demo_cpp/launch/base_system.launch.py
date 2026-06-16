@@ -2,7 +2,7 @@
 Author: 树 shuxianshengio@126.com
 Date: 2026-06-09 15:26:09
 LastEditors: 树 shuxianshengio@126.com
-LastEditTime: 2026-06-10 14:13:48
+LastEditTime: 2026-06-16 13:41:17
 FilePath: /shu/ros2_ws/src/base_demo_cpp/launch/base_system.launch.py
 Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE)
 '''
@@ -40,11 +40,23 @@ def generate_launch_description():
         default_value='200',
         description='Publish period in milliseconds for cmd_vel_test_node'
     )
+    status_pub_reliability_arg=DeclareLaunchArgument(
+        'status_pub_reliability',
+        default_value='reliable',
+        description='Reliability QoS for /base/status publisher'
+    )
+    status_sub_reliability_arg=DeclareLaunchArgument(
+        'status_sub_reliability',
+        default_value='reliable',
+        description='Reliability QoS for /base/status subscriber'
+    )
     cmd_timeout_ms=LaunchConfiguration('cmd_timeout_ms')
     test_vx=LaunchConfiguration("test_vx")
     test_vy=LaunchConfiguration("test_vy")
     test_wz=LaunchConfiguration("test_wz")
     publish_period_ms=LaunchConfiguration("publish_period_ms")
+    status_pub_reliability=LaunchConfiguration("status_pub_reliability")
+    status_sub_reliability=LaunchConfiguration("status_sub_reliability")
     base_node=Node(
         package='base_demo_cpp',
         executable='base_node',
@@ -52,8 +64,11 @@ def generate_launch_description():
         output='screen',
         parameters=[
             {'cmd_timeout_ms':cmd_timeout_ms,
-             "server_ip":"127.0.0.1",
-             "server_port":17000}
+             'server_ip':"127.0.0.1",
+             'server_port':17000,
+             'status_reliability':status_pub_reliability,
+             'status_depth':10,
+             }
         ]
         )
 
@@ -61,7 +76,13 @@ def generate_launch_description():
         package='base_demo_cpp',
         executable='base_status_listener_node',
         name='base_status_listener_node',
-        output='screen'
+        output='screen',
+        parameters=[
+            {
+                'status_reliability':status_sub_reliability,
+                'status_depth':10,
+        }
+        ]
     )
 
     cmd_vel_test_node=Node(
@@ -85,6 +106,8 @@ def generate_launch_description():
         test_vy_arg,
         test_wz_arg,
         publish_period_ms_arg,
+        status_pub_reliability_arg,
+        status_sub_reliability_arg,
         base_node,
         status_listener_node,
         cmd_vel_test_node,

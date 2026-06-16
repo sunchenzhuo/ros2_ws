@@ -108,18 +108,8 @@ private:
   std::string server_ip_ = "127.0.0.1";
   int server_port_ = 17000;
 
-  std::string errorCodeToString(int err_code)
-  {
-    if (err_code == 0)
-    {
-      return "OK";
-    }
-    if (err_code == 1)
-    {
-      return "LOW_BATTERY_VOLTAGE";
-    }
-    return "UNKNOW";
-  }
+  std::string status_reliability_ = "reliable";
+  int status_depth_ = 10;
 
 private:
   /**
@@ -282,13 +272,6 @@ private:
       err = "LOW_BATTERY";
     }
 
-    int status_seq = seq_;
-    double status_vx = current_vx;
-    double status_vy = current_vy;
-    double status_wz = current_wz;
-    double status_battery_voltage = battery_voltage;
-    std::string status_err = err;
-
     // 使用字符串输出流拼接待发送的底盘控制命令
     // std::fixed + std::setprecision(2) 表示浮点数固定保留 2 位小数
     std::ostringstream cmd_oss;
@@ -304,6 +287,8 @@ private:
 
     // 将拼接完成的命令转换为字符串，准备通过 TCP 发送
     std::string cmd = cmd_oss.str();
+    ChassisStatus chassis_status;
+    bool has_chassis_status = false;
 
     // 创建 TCP 客户端对象，用于连接 QEMU 仿真端
     TcpClient client;
@@ -348,10 +333,6 @@ private:
               "RX:%s",
               reply.c_str());
 
-          // 定义底盘状态结构体，用于保存解析后的状态数据
-          ChassisStatus chassis_status;
-          bool has_chassis_status = false;
-
           // 解析 STA 状态报文
           // 预期格式：STA seq vx vy wz battery_voltage err_code
           if (parseSta(reply, chassis_status))
@@ -380,15 +361,32 @@ private:
       }
     }
 
+    int status_seq = seq_;
+    double status_vx = current_vx;
+    double status_vy = current_vy;
+    double status_wz = current_wz;
+    double status_battery_voltage = battery_voltage;
+    std::string status_err = err;
+
+    if (has_chassis_status)
+    {
+      status_seq = chassis_status.seq;
+      status_vx = chassis_status.vx;
+      status_vy = chassis_status.vy;
+      status_wz = chassis_status.wz;
+      status_battery_voltage = chassis_status.battery_voltage;
+      status_err = errorCodeToString(chassis_status.err_code);
+    }
+
     // 创建结构化底盘状态消息。
     base_demo_cpp::msg::BaseStatus msg;
 
-    msg.seq = seq_;
-    msg.vx = current_vx;
-    msg.vy = current_vy;
-    msg.wz = current_wz;
-    msg.battery_voltage = battery_voltage;
-    msg.err = err;
+    msg.seq = status_seq;
+    msg.vx = status_vx;
+    msg.vy = status_vy;
+    msg.wz = status_wz;
+    msg.battery_voltage = status_battery_voltage;
+    msg.err = status_err;
     msg.cmd_timeout = cmd_timeout;
 
     status_pub_->publish(msg);
@@ -503,6 +501,18 @@ private:
     return result;
   }
 
+  std::string errorCodeToString(int err_code)
+  {
+    if (err_code == 0)
+    {
+      return "OK";
+    }
+    if (err_code == 1)
+    {
+      return "LOW_BATTERY_VOLTAGE";
+    }
+    return "UNKNOW";
+  }
   bool parseSta(const std::string &line, ChassisStatus &status)
   {
     std::istringstream iss(line);
@@ -536,6 +546,9 @@ public:
     this->declare_parameter<int>("cmd_timeout_ms", 1000);
     this->declare_parameter<std::string>("server_ip", "127.0.0.1");
     this->declare_parameter<int>("server_port", 17000);
+    this->declare_parameter<std::string>("status_reliability", "reliable");
+    this->declare_parameter<int>("status_depth", 10);
+
     cmd_timeout_ms_ = this->get_parameter("cmd_timeout_ms").as_int();
     param_call_handle_ = this->add_on_set_parameters_callback(
         std::bind(
@@ -558,9 +571,38 @@ public:
     timer_group_ = this->create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);
 
     // 创建底盘状态发布者。
-    status_pub_ = this->create_publisher<base_demo_cpp::msg::BaseStatus>("/base/status", 10);
+    rclcpp::QoS status_qos(status_depth_);
+    if (status_reliability_ == "best_effort")
+    {
+      status_qos.best_effort();
+    }
+    else
+    {
+      status_qos.reliable();
+    }
+    status_pub_ = this->create_publisher<base_demo_cpp::msg::BaseStatus>(
+        "/base/status",
+        status_qos);
+
+    RCLCPP_INFO(
+        this->get_logger(),
+        "status publisher qos reliability=%s depth=%d",
+        status_reliability_.c_str(),
+        status_depth_);
+
     server_ip_ = this->get_parameter("server_ip").as_string();
     server_port_ = this->get_parameter("server_port").as_int();
+    status_reliability_ = this->get_parameter("status_reliability").as_string();
+    status_depth_ = this->get_parameter("status_depth").as_int();
+
+    if (status_depth_ <= 0)
+    {
+      RCLCPP_WARN(
+          this->get_logger(),
+          "invalid status_depth=%d,use default 10",
+          status_depth_);
+      status_depth_ = 10;
+    }
 
     RCLCPP_INFO(
         this->get_logger(),
