@@ -570,6 +570,20 @@ public:
     cmd_group_ = this->create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);
     timer_group_ = this->create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);
 
+    server_ip_ = this->get_parameter("server_ip").as_string();
+    server_port_ = this->get_parameter("server_port").as_int();
+    status_reliability_ = this->get_parameter("status_reliability").as_string();
+    status_depth_ = this->get_parameter("status_depth").as_int();
+
+    if (status_depth_ <= 0)
+    {
+      RCLCPP_WARN(
+          this->get_logger(),
+          "invalid status_depth=%d,use default 10",
+          status_depth_);
+      status_depth_ = 10;
+    }
+
     // 创建底盘状态发布者。
     rclcpp::QoS status_qos(status_depth_);
     if (status_reliability_ == "best_effort")
@@ -589,21 +603,7 @@ public:
         "status publisher qos reliability=%s depth=%d",
         status_reliability_.c_str(),
         status_depth_);
-
-    server_ip_ = this->get_parameter("server_ip").as_string();
-    server_port_ = this->get_parameter("server_port").as_int();
-    status_reliability_ = this->get_parameter("status_reliability").as_string();
-    status_depth_ = this->get_parameter("status_depth").as_int();
-
-    if (status_depth_ <= 0)
-    {
-      RCLCPP_WARN(
-          this->get_logger(),
-          "invalid status_depth=%d,use default 10",
-          status_depth_);
-      status_depth_ = 10;
-    }
-
+        
     RCLCPP_INFO(
         this->get_logger(),
         "qemu server_ip=%s server_port=%d",

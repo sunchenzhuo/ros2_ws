@@ -2,7 +2,7 @@
  * @Author: 树 shuxianshengio@126.com
  * @Date: 2026-06-09 10:06:41
  * @LastEditors: 树 shuxianshengio@126.com
- * @LastEditTime: 2026-06-15 13:44:51
+ * @LastEditTime: 2026-06-16 14:39:38
  * @FilePath: /shu/agv-robot-system/ros2_ws/src/base_demo_cpp/src/base_status_listener_node.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -63,18 +63,27 @@ public:
     status_reliability_ = this->get_parameter("status_reliability").as_string();
     status_depth_ = this->get_parameter("status_depth").as_int();
 
-    rclcpp::QoS status_qos = (status_depth_);
-    if (status_reliability_ == "best_effor")
+    if (status_depth_ <= 0)
+    {
+      RCLCPP_WARN(
+          this->get_logger(),
+          "invalid status_depth = %d ,user default 10",
+          status_depth_);
+      status_depth_ = 10;
+    }
+
+    rclcpp::QoS status_qos(status_depth_);
+    if (status_reliability_ == "best_effort")
     {
       status_qos.best_effort();
     }
     else
     {
-      status_qos.reliability();
+      status_qos.reliable();
     }
     sub_ = this->create_subscription<base_demo_cpp::msg::BaseStatus>(
-        "base/status",
-        10,
+        "/base/status",
+        status_qos,
         std::bind(&BaseStatusListenerNode::onStatus, this, std::placeholders::_1));
 
     RCLCPP_INFO(this->get_logger(),
