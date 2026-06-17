@@ -2,7 +2,7 @@
 Author: 树 shuxianshengio@126.com
 Date: 2026-06-09 15:26:09
 LastEditors: 树 shuxianshengio@126.com
-LastEditTime: 2026-06-16 13:41:17
+LastEditTime: 2026-06-17 13:49:17
 FilePath: /shu/ros2_ws/src/base_demo_cpp/launch/base_system.launch.py
 Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE)
 '''
@@ -50,6 +50,21 @@ def generate_launch_description():
         default_value='reliable',
         description='Reliability QoS for /base/status subscriber'
     )
+    status_depth_arg=DeclareLaunchArgument(
+        'status_depth',
+        default_value='10',
+        description='QoS depth for /base/status'
+    )
+    status_publish_period_ms_arg=DeclareLaunchArgument(
+        'status_publish_period_ms',
+        default_value='1000',
+        description='Publish period in milliseconds for /base/status'
+    )
+    simulate_slow_callback_ms_arg=DeclareLaunchArgument(
+        'simulate_slow_callback_ms',
+        default_value='0',
+        description='Sleep time in listener callback'
+    )
     cmd_timeout_ms=LaunchConfiguration('cmd_timeout_ms')
     test_vx=LaunchConfiguration("test_vx")
     test_vy=LaunchConfiguration("test_vy")
@@ -57,6 +72,9 @@ def generate_launch_description():
     publish_period_ms=LaunchConfiguration("publish_period_ms")
     status_pub_reliability=LaunchConfiguration("status_pub_reliability")
     status_sub_reliability=LaunchConfiguration("status_sub_reliability")
+    status_depth=LaunchConfiguration("status_depth")
+    status_publish_period_ms=LaunchConfiguration("status_publish_period_ms")
+    simulate_slow_callback_ms=LaunchConfiguration("simulate_slow_callback_ms")
     base_node=Node(
         package='base_demo_cpp',
         executable='base_node',
@@ -67,7 +85,8 @@ def generate_launch_description():
              'server_ip':"127.0.0.1",
              'server_port':17000,
              'status_reliability':status_pub_reliability,
-             'status_depth':10,
+             'status_depth':status_depth,
+             'status_publish_period_ms':status_publish_period_ms,
              }
         ]
         )
@@ -80,7 +99,8 @@ def generate_launch_description():
         parameters=[
             {
                 'status_reliability':status_sub_reliability,
-                'status_depth':10,
+                'status_depth':status_depth,
+                'simulate_slow_callback_ms':simulate_slow_callback_ms,
         }
         ]
     )

@@ -2,9 +2,9 @@
  * @Author: 树 shuxianshengio@126.com
  * @Date: 2026-06-09 10:06:41
  * @LastEditors: 树 shuxianshengio@126.com
- * @LastEditTime: 2026-06-16 14:39:38
+ * @LastEditTime: 2026-06-17 13:42:06
  * @FilePath: /shu/agv-robot-system/ros2_ws/src/base_demo_cpp/src/base_status_listener_node.cpp
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @Description: 订阅 /base/status 消息类型 base_demo_cpp/msg/BaseStatus  读取 seq / vx / vy / wz / battery_voltage / err / cmd_timeout   根据 cmd_timeout 和 battery_voltage 打印状态判断
  */
 /**
  * @文件路径         : /shu/ros2_ws/src/base_demo_cpp/src/base_status_listener_node.cpp
@@ -18,6 +18,8 @@
  */
 
 #include <memory>
+#include <chrono>
+#include <thread>
 
 #include "base_demo_cpp/msg/base_status.hpp"
 #include "rclcpp/rclcpp.hpp"
@@ -28,6 +30,7 @@ private:
   rclcpp::Subscription<base_demo_cpp::msg::BaseStatus>::SharedPtr sub_;
   std::string status_reliability_ = "reliable";
   int status_depth_ = 10;
+  int simulate_slow_callback_ms_ = 0;
 
 private:
   void onStatus(const base_demo_cpp::msg::BaseStatus::SharedPtr msg)
@@ -59,9 +62,11 @@ public:
   {
     this->declare_parameter<std::string>("status_reliability", "reliable");
     this->declare_parameter<int>("status_depth", 10);
+    this->declare_parameter<int>("simulate_slow_callback_ms", 10);
 
     status_reliability_ = this->get_parameter("status_reliability").as_string();
     status_depth_ = this->get_parameter("status_depth").as_int();
+    simulate_slow_callback_ms_ = this->get_parameter("simulate_slow_callback_ms").as_int();
 
     if (status_depth_ <= 0)
     {
@@ -70,6 +75,15 @@ public:
           "invalid status_depth = %d ,user default 10",
           status_depth_);
       status_depth_ = 10;
+    }
+
+    if (simulate_slow_callback_ms_ < 0)
+    {
+      RCLCPP_WARN(
+          this->get_logger(),
+          "invalid simulate_slow_callback_ms=%d,use default 0",
+          simulate_slow_callback_ms_);
+      simulate_slow_callback_ms_ = 0;
     }
 
     rclcpp::QoS status_qos(status_depth_);
@@ -85,6 +99,16 @@ public:
         "/base/status",
         status_qos,
         std::bind(&BaseStatusListenerNode::onStatus, this, std::placeholders::_1));
+
+    if (simulate_slow_callback_ms_ > 0)
+    {
+      std::this_thread::sleep_for(std::chrono::milliseconds(simulate_slow_callback_ms_));
+    }
+
+    RCLCPP_INFO(
+        this->get_logger(),
+        "simulate_slow_callback_ms=%d",
+        simulate_slow_callback_ms_);
 
     RCLCPP_INFO(this->get_logger(),
                 "status subscriber qos reliability=%s depth=%d",

@@ -110,6 +110,7 @@ private:
 
   std::string status_reliability_ = "reliable";
   int status_depth_ = 10;
+  int status_publish_period_ms_ = 1000;
 
 private:
   /**
@@ -548,6 +549,7 @@ public:
     this->declare_parameter<int>("server_port", 17000);
     this->declare_parameter<std::string>("status_reliability", "reliable");
     this->declare_parameter<int>("status_depth", 10);
+    this->declare_parameter<int>("status_publish_period_ms", 1000);
 
     cmd_timeout_ms_ = this->get_parameter("cmd_timeout_ms").as_int();
     param_call_handle_ = this->add_on_set_parameters_callback(
@@ -574,6 +576,7 @@ public:
     server_port_ = this->get_parameter("server_port").as_int();
     status_reliability_ = this->get_parameter("status_reliability").as_string();
     status_depth_ = this->get_parameter("status_depth").as_int();
+    status_publish_period_ms_ = this->get_parameter("status_publish_period_ms").as_int();
 
     if (status_depth_ <= 0)
     {
@@ -582,6 +585,16 @@ public:
           "invalid status_depth=%d,use default 10",
           status_depth_);
       status_depth_ = 10;
+    }
+
+    if (status_publish_period_ms_ <= 0)
+    {
+      RCLCPP_WARN(
+          this->get_logger(),
+          "invalid status_publish_period_ms=%d,user default 1000",
+          1000);
+
+      status_publish_period_ms_ = 1000;
     }
 
     // 创建底盘状态发布者。
@@ -603,7 +616,7 @@ public:
         "status publisher qos reliability=%s depth=%d",
         status_reliability_.c_str(),
         status_depth_);
-        
+
     RCLCPP_INFO(
         this->get_logger(),
         "qemu server_ip=%s server_port=%d",
@@ -632,12 +645,13 @@ public:
     // 1000ms 表示每 1000 毫秒触发一次，也就是每 1 秒调用一次 onTimer()。
     //
     // 第三个参数 timer_group_ 表示该定时器回调属于 timer_group_。
-    timer_ = this->create_wall_timer(1000ms,
+    timer_ = this->create_wall_timer(std::chrono::milliseconds(status_publish_period_ms_),
                                      std::bind(&BaseNode::onTimer, this),
                                      timer_group_);
 
     RCLCPP_INFO(this->get_logger(), "base_node started");
     RCLCPP_INFO(this->get_logger(), "cmd_timeout_ms=%d", cmd_timeout_ms_);
+    RCLCPP_INFO(this->get_logger(), "status_publish_period_ms=%d", status_publish_period_ms_);
   }
 };
 
